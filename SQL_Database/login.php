@@ -15,9 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user) {
             $_SESSION['username'] = $username;
             $_SESSION['loggedin'] = true;
-            header("Location: welcome.php");
         } else {
             echo "Invalid username or password.";
         }
+    } 
+    catch (PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
     }
 }

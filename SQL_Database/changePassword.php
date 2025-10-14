@@ -26,11 +26,11 @@
     $hashedPassword = crypt($newPassword, $salt);
 
     // Use MySQLi consistently (not PDO)
-    $query = "SELECT * FROM users WHERE username = ? AND hash = ? AND salt = ?";
+    $query = "UPDATE users SET salt = ?, hash = ? WHERE username = ?";
     $stmt = mysqli_prepare($con, $query);
     
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "sss", $username, $hashedPassword, $salt);
+        mysqli_stmt_bind_param($stmt, "sss", $salt, $hashedPassword, $username);
         $result = mysqli_stmt_execute($stmt);
         
         if ($result) {

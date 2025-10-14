@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
+  volume: 5
 --- !u!4 &374029079
 Transform:
   m_ObjectHideFlags: 0
@@ -1536,9 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GV: {fileID: 0}
-  intro: {fileID: 8300000, guid: cd4875dc894436e4a8b5fb4759c2ba77, type: 3}
-  loop: {fileID: 8300000, guid: be2c7372f2cb3d24f9f87b6678aef957, type: 3}
-  delayAdjust: 0.38
+  song: {fileID: 0}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2303,8 +2302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2001754315}
-        m_TargetAssemblyTypeName: UserAuth, Assembly-CSharp
+      - m_Target: {fileID: 2001754316}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
         m_MethodName: SubmitLogin
         m_Mode: 1
         m_Arguments:
@@ -2415,7 +2414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2001754314}
-  - component: {fileID: 2001754315}
+  - component: {fileID: 2001754316}
   m_Layer: 0
   m_Name: LoginManager
   m_TagString: Untagged
@@ -2438,7 +2437,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2001754315
+--- !u!114 &2001754316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2447,15 +2446,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2001754312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f8fc2429affd204a8b50fc45b97f6b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bc2de9b2c867424c89cea8a878be1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoginManagerPulled: {fileID: 2001754312}
   usernameInput: {fileID: 1001789107}
   passwordInput: {fileID: 1419996122}
   errorText: {fileID: 451591539}
-  setInfo: {fileID: 0}
-  username: 
 --- !u!1 &2033857029
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,13 +17,6 @@ public class Login : MonoBehaviour
         usernameInput = GameObject.Find("Username").GetComponent<TMP_InputField>();
         passwordInput = GameObject.Find("Password").GetComponent<TMP_InputField>();
         errorText = GameObject.Find("Error").GetComponent<TextMeshProUGUI>();
-
-        if (Application.platform != RuntimePlatform.WebGLPlayer)
-        {
-            DisplayError("The code is not running on a WebGL build; as such, the Javascript functions will not be recognized.");
-        }
-
-
     }
 
     public void CallSubmitLogin()

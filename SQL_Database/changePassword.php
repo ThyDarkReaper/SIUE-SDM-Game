@@ -25,7 +25,6 @@
     $salt = "\$5\$rounds=5000\$" . "steamedhams" . $username . "\$";
     $hashedPassword = crypt($newPassword, $salt);
 
-    // Use MySQLi consistently (not PDO)
     $query = "UPDATE users SET salt = ?, hash = ? WHERE username = ?";
     $stmt = mysqli_prepare($con, $query);
     

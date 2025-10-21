@@ -2,7 +2,7 @@
     header('Content-Type: application/json');
     
     // Check if required POST data exists
-    if (!isset($_POST['username']) || !isset($_POST['newPassword'])) {
+    if (!isset($_POST['username']) || !isset($_POST['password'])) {
         echo json_encode(['success' => false, 'message' => 'Missing required fields']);
         exit;
     }
@@ -14,34 +14,40 @@
     }
 
     $username = $_POST['username'];
-    $newPassword = $_POST['newPassword'];
+    $password = $_POST['password'];
 
     // Input validation
-    if (empty($username) || empty($newPassword)) {
+    if (empty($username) || empty($password)) {
         echo json_encode(['success' => false, 'message' => 'Username and password cannot be empty']);
         exit;
     }
 
-    $salt = "\$5\$rounds=5000\$" . "steamedhams" . $username . "\$";
-    $hashedPassword = crypt($newPassword, $salt);
-
-    // Use MySQLi consistently (not PDO)
-    $query = "SELECT * FROM users WHERE username = ? AND hash = ? AND salt = ?";
+    $query = "SELECT hash, salt FROM users WHERE username = ?";
     $stmt = mysqli_prepare($con, $query);
     
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "sss", $username, $hashedPassword, $salt);
+        mysqli_stmt_bind_param($stmt, "s", $username);
         $result = mysqli_stmt_execute($stmt);
         
         if ($result) {
-            $affectedRows = mysqli_stmt_affected_rows($stmt);
-            if ($affectedRows > 0) {
-                echo json_encode(['success' => true, 'message' => 'Password updated successfully']);
+            $received = mysqli_stmt_get_result($stmt);
+            if ($received && $row = mysqli_fetch_assoc($received)) {
+                $storedHash = $row['hash'];
+                $storedSalt = $row['salt'];
+                
+                // Generate hash for the provided password using the stored salt
+                $computedHash = crypt($password, $storedSalt);
+                
+                if ($computedHash === $storedHash) {
+                    echo json_encode(['success' => true, 'message' => 'User authenticated successfully']);
+                } else {
+                    echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
+                }
             } else {
-                echo json_encode(['success' => false, 'message' => 'User not found or password unchanged']);
+                echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
             }
         } else {
-            echo json_encode(['success' => false, 'message' => 'Failed to update password']);
+            echo json_encode(['success' => false, 'message' => 'Failed to authenticate user']);
         }
         
         mysqli_stmt_close($stmt);

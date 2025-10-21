@@ -43,7 +43,6 @@ public class ChangePassword : MonoBehaviour
         form.AddField("username", PlayerPrefs.GetString("username"));
         form.AddField("newPassword", newPasswordInput.text);
 
-        // Most likely URL based on your folder structure
         string url = "http://localhost/changePassword.php";
         Debug.Log("Attempting to connect to: " + url);
         UnityWebRequest www = UnityWebRequest.Post(url, form);

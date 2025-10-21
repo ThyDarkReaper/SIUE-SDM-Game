@@ -2304,7 +2304,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2001754316}
         m_TargetAssemblyTypeName: Login, Assembly-CSharp
-        m_MethodName: SubmitLogin
+        m_MethodName: CallSubmitLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

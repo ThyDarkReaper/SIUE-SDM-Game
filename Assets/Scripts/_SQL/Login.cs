@@ -34,50 +34,78 @@ public class Login : MonoBehaviour
             DisplayError("Username and Password cannot be empty.");
             yield break;
         }
+        
+        // Check special cases first and stop execution if matched
         if (username == "admin@siue.edu" && password == "admin123")
         {
+            PlayerPrefs.SetString("username", username);
             SceneManager.LoadScene("AdminLogin");
+            yield break; // Stop execution here
         }
         if (password == "test123")
         {
             ChangePassword.SetUsername(username);
             SceneManager.LoadScene("ChangePassword");
+            yield break; // Stop execution here
         }
+        
+        // Only proceed with web request if not a special case
         WWWForm form = new WWWForm();
         form.AddField("username", username);
         form.AddField("password", password);
-        UnityWebRequest www = UnityWebRequest.Post("https://localhost/login./php", form);
-        yield return www.SendWebRequest();
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            DisplayError("Network Error: " + www.error);
-            Debug.LogError("Network Error: " + www.error);
-        }
-        else
-        {
-            // Parse JSON response
-            string responseText = www.downloadHandler.text;
-            Debug.Log("Response Text: " + responseText); // Log the raw response for debugging
 
-            // Attempt to parse the JSON response
-            try
+        string url = "http://localhost/login.php";
+        Debug.Log("Attempting to connect to: " + url);
+        
+        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        {
+            yield return www.SendWebRequest();
+            
+            if (www.result != UnityWebRequest.Result.Success)
             {
-                var response = JsonUtility.FromJson<LoginResponse>(responseText);
-                if (response.success)
-                {
-                    Debug.Log("Login successful for user: " + username);
-                    SceneManager.LoadScene("MainMenu");
-                }
-                else
-                {
-                    DisplayError(response.message);
-                    Debug.LogError("Login failed: " + response.message);
-                }
+                DisplayError("Network Error: " + www.error);
+                Debug.LogError("Network Error: " + www.error);
             }
-            catch (System.Exception e)
+            else
             {
-                DisplayError("Failed to parse server response.");
-                Debug.LogError("JSON Parsing Error: " + e.Message);
+                // Parse JSON response
+                string responseText = www.downloadHandler.text;
+                Debug.Log("Server Response: " + responseText);
+                
+                try
+                {
+                    // Simple JSON parsing
+                    if (responseText.Contains("\"success\":true"))
+                    {
+                        Debug.Log("User logged in successfully!");
+                        PlayerPrefs.SetString("username", username);
+                        SceneManager.LoadScene("WelcomeScene");
+                    }
+                    else if (responseText.Contains("\"success\":false"))
+                    {
+                        // Extract error message from JSON
+                        string errorMessage = "Login failed";
+                        int messageStart = responseText.IndexOf("\"message\":\"") + 11;
+                        if (messageStart > 10)
+                        {
+                            int messageEnd = responseText.IndexOf("\"", messageStart);
+                            if (messageEnd > messageStart)
+                            {
+                                errorMessage = responseText.Substring(messageStart, messageEnd - messageStart);
+                            }
+                        }
+                        DisplayError(errorMessage);
+                    }
+                    else
+                    {
+                        DisplayError("Unexpected server response: " + responseText);
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    DisplayError("Error parsing response: " + e.Message);
+                    Debug.LogError("JSON Parse Error: " + e.Message + " Response: " + responseText);
+                }
             }
         }
     }

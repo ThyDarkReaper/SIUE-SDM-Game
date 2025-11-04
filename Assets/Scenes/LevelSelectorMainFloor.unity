@@ -2118,7 +2118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GV: {fileID: 582504655}
-  song: {fileID: 8300000, guid: dafa1c65bc2e854458f810bcc3a91e05, type: 3}
+  song: {fileID: 0}
 --- !u!1001 &630854057
 PrefabInstance:
   m_ObjectHideFlags: 0

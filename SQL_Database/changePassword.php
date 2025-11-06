@@ -1,4 +1,7 @@
 <?php
+// This script changes the password for the user using the submitted username and newPassword via the POST method from ChangePassword.cs
+// The script connects to the MYSQL database, validates the input, hashes the new password with a salt, and updates the user's password in the database.
+
     header('Content-Type: application/json');
     
     // Check if required POST data exists

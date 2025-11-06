@@ -1,4 +1,7 @@
 <?php
+// This script validates user login credentials using the submitted username and password via the Post method from Login.cs
+// The script connects to the MySQL database, retrieves the stored hash and salt for the given username, hashes the provided
+// password with the stored salt, and compares it to the stored hash to authenticate the user.
     header('Content-Type: application/json');
     
     // Check if required POST data exists

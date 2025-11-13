@@ -14,36 +14,27 @@ public class FileToTextboxes : MonoBehaviour
 
     void Start()
     {
-        next.onClick.AddListener(OnButtonClick);
-        /*
+
         if (File.Exists(filePath))
         {
             string[] lines = File.ReadAllLines(filePath);
-            for (int i = 0; i < textboxes.Length && i < lines.Length; i++)
-            {
-                textboxes[i].text = lines[i];
-            }
+            next.onClick.AddListener(OnButtonClick(lines,currentIndex));
         }
         else
         {
             Debug.LogError("File not found at: " + filePath);
         }
-        */
+        
+        
     }
 
-    public void OnButtonClick()
+    public void OnButtonClick(string[] lines, int currentIndex)
     {
-        if (File.Exists(filePath))
+        
+        for (int i = currentIndex; i < 5 && i < lines.Length; i++)
         {
-            string[] lines = File.ReadAllLines(filePath);
-            for (int i = 0; i < textboxes.Length && i < lines.Length; i++)
-            {
-                textboxes[i].text = lines[i];
-            }
-        }
-        else
-        {
-            Debug.LogError("File not found at: " + filePath);
+            textboxes[i%5].text = lines[i];
+            currentIndex = i;
         }
     }
         

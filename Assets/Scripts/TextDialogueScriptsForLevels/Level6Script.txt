@@ -1,0 +1,44 @@
+Hello, I am [Name], I am a 45 year old male!
+This ulcer on the side of my tongue just won't heal.  Its been at least 3 months and it is still really painful.
+Which of the following is an appropriate first step in managing this patient's condition? 1101588
+0Immediate start of chemotherapy   
+0HPeriodically follow-up with the patient to determine the need for further evaluation.
+1Performing a biopsy or providing immediate referral to a specialist.
+0Prescription of antibiotics 
+Incorrect
+Incorrect
+Correct
+Incorrect
+8675309
+Which of the following should be included HIGHEST in your differential diagnosis? 
+1101588
+0Benign keratosis 
+1Oral squamous cell carcinoma (SCC)
+0Traumatic ulcerative granuloma with stromal eosinophilia  
+0Fibroma 
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309
+Which of the following findings would most likely increase the suspicion of malignancy in a non-healing ulcer?
+1101588
+0A lesion smaller than 1 cm in size   
+0Smooth, rounded edges of the ulcer  
+0A lesion that disappears.  
+1Paresthesia of the tongue around the lesion
+Incorrect
+Incorrect
+Incorrect
+Correct
+8675309
+In this patient, the presence of a firm, fixed, ipsilateral lymph node is concerning of a benign immune reaction rather than a sign of advanced disease. 1101588
+0True
+1False
+0-
+0-
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309

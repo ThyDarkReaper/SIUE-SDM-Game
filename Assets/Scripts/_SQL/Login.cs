@@ -34,14 +34,15 @@ public class Login : MonoBehaviour
             DisplayError("Username and Password cannot be empty.");
             yield break;
         }
-        
-        // Check special cases first and stop execution if matched
+
+        // Check if user is an admin
         if (username == "admin@siue.edu" && password == "admin123")
         {
             PlayerPrefs.SetString("username", username);
             SceneManager.LoadScene("AdminLogin");
             yield break; // Stop execution here
         }
+        // Check if password needs to be changed
         if (password == "test123")
         {
             ChangePassword.SetUsername(username);
@@ -54,33 +55,39 @@ public class Login : MonoBehaviour
         form.AddField("username", username);
         form.AddField("password", password);
 
-        string url = "http://localhost/login.php";
+        string url = "http://103-89-14-161.cloud-xip.com/login.php";
         Debug.Log("Attempting to connect to: " + url);
         
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))
         {
+            www.timeout = 30;
             yield return www.SendWebRequest();
             
             if (www.result != UnityWebRequest.Result.Success)
             {
-                DisplayError("Network Error: " + www.error);
-                Debug.LogError("Network Error: " + www.error);
+                string errorDetails = $"Status Code: {www.responseCode}, Error: {www.error}";
+                if (www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
+                {
+                    errorDetails += $", Response: {www.downloadHandler.text}";
+                }
+                DisplayError("Network Error: " + errorDetails);
+                Debug.LogError("Network Error: " + errorDetails);
             }
             else
             {
-                // Parse JSON response
                 string responseText = www.downloadHandler.text;
                 Debug.Log("Server Response: " + responseText);
                 
                 try
                 {
-                    // Simple JSON parsing
+                    // User login success
                     if (responseText.Contains("\"success\":true"))
                     {
                         Debug.Log("User logged in successfully!");
                         PlayerPrefs.SetString("username", username);
                         SceneManager.LoadScene("WelcomeScene");
                     }
+                    // User login failed
                     else if (responseText.Contains("\"success\":false"))
                     {
                         // Extract error message from JSON
@@ -96,6 +103,7 @@ public class Login : MonoBehaviour
                         }
                         DisplayError(errorMessage);
                     }
+                    // Server error
                     else
                     {
                         DisplayError("Unexpected server response: " + responseText);

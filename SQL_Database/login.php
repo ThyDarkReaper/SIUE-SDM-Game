@@ -7,7 +7,7 @@
         exit;
     }
 
-    $con = mysqli_connect('localhost', 'root', 'root', 'oral_medicine', 3306);
+    $con = mysqli_connect('103-89-14-161.cloud-xip.com', 'root', ' DPWe3qN67TW3tkf', 'oral_medicine', 3306);
     if (!$con) {
         echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
         exit;

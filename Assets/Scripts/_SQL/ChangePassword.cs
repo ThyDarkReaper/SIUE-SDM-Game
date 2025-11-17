@@ -39,34 +39,52 @@ public class ChangePassword : MonoBehaviour
         }
 
         Debug.Log("Submitting new password for user: " + PlayerPrefs.GetString("username"));
-        WWWForm form = new WWWForm();
-        form.AddField("username", PlayerPrefs.GetString("username"));
-        form.AddField("newPassword", newPasswordInput.text);
+        
+        string username = PlayerPrefs.GetString("username");
+        string newPassword = newPasswordInput.text;
+        
+        Debug.Log($"Sending - Username: '{username}', Password Length: {newPassword.Length}");
+        
+        // Try using string-based POST data instead of WWWForm
+        string postData = $"username={UnityWebRequest.EscapeURL(username)}&newPassword={UnityWebRequest.EscapeURL(newPassword)}";
+        Debug.Log($"POST Data: {postData}");
+        
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        string url = "http://localhost/changePassword.php";
+        string url = "http://103-89-14-161.cloud-xip.com/changePassword_test.php";
         Debug.Log("Attempting to connect to: " + url);
-        UnityWebRequest www = UnityWebRequest.Post(url, form);
+        
+        UnityWebRequest www = new UnityWebRequest(url, "POST");
+        www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        www.downloadHandler = new DownloadHandlerBuffer();
+        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        www.timeout = 30;
         yield return www.SendWebRequest();
         
         if (www.result != UnityWebRequest.Result.Success)
         {
-            DisplayError("Network Error: " + www.error);
-            Debug.LogError("Network Error: " + www.error);
+            string errorDetails = $"Status Code: {www.responseCode}, Error: {www.error}";
+            if (www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
+            {
+                errorDetails += $", Response: {www.downloadHandler.text}";
+            }
+            DisplayError("Network Error: " + errorDetails);
+            Debug.LogError("Network Error: " + errorDetails);
         }
         else
         {
-            // Parse JSON response
             string responseText = www.downloadHandler.text;
             Debug.Log("Server Response: " + responseText);
             
             try
             {
-                // Simple JSON parsing
+                // Change password successful
                 if (responseText.Contains("\"success\":true"))
                 {
                     Debug.Log("Password changed successfully!");
                     SceneManager.LoadScene("Login");
                 }
+                // Change password failed
                 else if (responseText.Contains("\"success\":false"))
                 {
                     // Extract error message from JSON

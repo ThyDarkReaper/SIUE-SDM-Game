@@ -9,44 +9,42 @@ public class csvreadin : MonoBehaviour
 {
     public TextAsset csvFile; // Assign in Inspector
     public TextMeshProUGUI dialogueText; // Or TextMeshProUGUI for TMP, assign in Inspector
-
-    private List<string[]> csvData = new List<string[]>();
+     public Button nextButton;             // Button for user to click (set in Inspector)
+    public string[] values;
+    public string[] lines;
     private int currentLine = 1;  // Start after header
+    public int line = 1;
     // Start is called before the first frame update
     void Start()
     {
         LoadCSV();
-        ShowLine(currentLine);
+        DisplayText(line); //WIP function to display text
+
+        // Add the button click event
+        nextButton.onClick.AddListener(OnNextButtonClicked);
     }
 
     // Load and parse the CSV file
     void LoadCSV()
     {
-        string[] lines = csvFile.text.Split('\n');
+        lines = csvFile.text.Split('\n');
         foreach (string line in lines)
         {
-            csvData.Add(line.Trim().Split(','));
+            values = line.Split(',');
         }
     }
-    // Display a specific line in the UI textbox
-    void ShowLine(int lineIndex)
+    /*
+    void DisplayText(int line);
     {
-        if (lineIndex < csvData.Count)
+        if(lines.length > 1)
         {
-            string[] lineData = csvData[lineIndex];
-            // Example: assuming CSV columns are ID,Character,Line
-            dialogueText.text = $"{lineData[1]}: {lineData[2]}";
-        }
-        else
-        {
-            dialogueText.text = "End of Dialog";
-        }
+            //place holder line
+        }  
     }
+    */
 
-    // Example method to hook to a Button to step through segments
-    public void NextLine()
+    void OnNextButtonClicked()
     {
-        currentLine++;
-        ShowLine(currentLine);
+        
     }
 }

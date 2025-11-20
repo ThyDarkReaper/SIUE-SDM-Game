@@ -51,7 +51,7 @@ public class ChangePassword : MonoBehaviour
         
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        string url = "http://103-89-14-161.cloud-xip.com/changePassword_test.php";
+        string url = "http://103-89-14-161.cloud-xip.com/changePassword.php";
         Debug.Log("Attempting to connect to: " + url);
         
         UnityWebRequest www = new UnityWebRequest(url, "POST");

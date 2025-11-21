@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 24528646}
   - component: {fileID: 24528645}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: text4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 223098736}
   - component: {fileID: 223098735}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 546076219}
   - component: {fileID: 546076218}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Main/Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 980484315}
   - component: {fileID: 980484314}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1514,7 +1514,7 @@ GameObject:
   - component: {fileID: 1797265624}
   - component: {fileID: 1797265623}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,7 +1721,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076561465}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2076561465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +1784,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc968f987fe83842b67b8ea660a2178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 11500000, guid: 2bc968f987fe83842b67b8ea660a2178, type: 3}
-  dialogueText: {fileID: 0}
+  csvFile: {fileID: 4900000, guid: db23f853156942c4dac150d3342d14db, type: 3}
+  nextButton: {fileID: 2076561464}
   values: []
+  lines: []
+  Question: {fileID: 546076218}
+  Option_1: {fileID: 980484314}
+  Option_2: {fileID: 223098735}
+  Option_3: {fileID: 1797265623}
+  Option_4: {fileID: 24528645}

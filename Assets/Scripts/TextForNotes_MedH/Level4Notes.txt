@@ -1,0 +1,9 @@
+Patient: 
+Female, 56 years old
+
+Chief Complaint: 
+"My gums burn, get red, and peel off easily."
+
+Current Findings:
+Generalized, desquamative gigivitis.
+Puritis of the eyes.

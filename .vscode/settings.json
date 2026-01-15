@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DentalGame.sln"
+    "dotnet.defaultSolution": "SIUE-SDM-Game.sln"
 }

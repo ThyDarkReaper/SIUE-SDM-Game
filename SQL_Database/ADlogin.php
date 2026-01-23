@@ -25,7 +25,7 @@
         exit;
     }
 
-    $query = "SELECT hash, salt FROM users WHERE username = ?";
+    $query = "SELECT hash, salt FROM admin WHERE username = ?";
     $stmt = mysqli_prepare($con, $query);
     
     if ($stmt) {

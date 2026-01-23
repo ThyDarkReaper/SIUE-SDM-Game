@@ -14,22 +14,22 @@
     }
 
     $username = $_POST['username'];
-    $score = $_POST['score'];
-    $level = $_POST['level'];
+    $charID = $_POST['characterID'];
+    
 
-    if (empty($username) || !is_numeric($score) || !is_numeric($level)) {
+    if (empty($username) || !is_numeric($charID)) {
         echo json_encode(value: ['success' => false, 'message' => 'Invalid input data']);
         exit();
     }
 
-    $query = "UPDATE users SET score = ?, level = ? where username = ?";
+    $query = "UPDATE users SET characterID = ? where username = ?";
     $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "iis", $score, $level, $username);
+    mysqli_stmt_bind_param($stmt, "iis", $charID, $username);
     $result = mysqli_stmt_execute($stmt);
     if ($result) {
         $affectedRows = mysqli_stmt_affected_rows($stmt);
         if ($affectedRows == 1) {
-            echo json_encode(value: ['success' => true, 'message' => 'Score and level updated successfully']);
+            echo json_encode(value: ['success' => true, 'message' => 'characterID updated successfully']);
         } else {
             echo json_encode(value: ['success' => false, 'message' => 'User not found or no changes made']);
 

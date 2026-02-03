@@ -1393,6 +1393,7 @@ GameObject:
   - component: {fileID: 316676847}
   - component: {fileID: 316676846}
   - component: {fileID: 316676849}
+  - component: {fileID: 316676850}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1427,8 +1428,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.462666, y: 1, z: 3.18227}
+  m_Center: {x: 0.2276004, y: 0, z: -1.0911355}
 --- !u!23 &316676847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1490,6 +1491,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcfe405ced5a4404933d700ad451c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &316676850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316676844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc0d8fb81ce34742817f32a91a3f17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  indicatorCubes: []
+  levelSelector: {fileID: 316676844}
+  pickedLevel: {fileID: 0}
+  characterForPOS: {fileID: 0}
+  targetSceneName: LevelSelector2ndFloor
+  FadePrefab: {fileID: 6536150287628382011, guid: 4b6ee565a88ef3c4fb57f5a5c6bfc5ae, type: 3}
 --- !u!1 &365834582
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,6 +23,9 @@ public class LevelButtonManager : MonoBehaviour
     public int attemptsDia = 0;
     public float maxScore = 50f;
 
+    public GameObject MainCamera;
+    public GameObject MedCamera;
+
     public GameObject axiumUIPanel;
     public GameObject diagnosisButton;
     public GameObject medicineButton;
@@ -243,7 +246,7 @@ public class LevelButtonManager : MonoBehaviour
         Debug.Log("In LBM: "+ GetLevelNumber());
 
         //Send the information the Firebase script to send the player score as a percent to specific level completed and make sure 2 decimal places
-        FB.UpdateCharacterField("playerExperience", score.ToString("F2"));
+        //FB.UpdateCharacterField("playerExperience", score.ToString("F2"));
 
         Debug.Log("Correct answer!");
         //Not really needed but reset everything
@@ -282,11 +285,13 @@ public class LevelButtonManager : MonoBehaviour
 
     //The back button for the DIA and MED buttons on the right hand corner of the screen
     public void OnClickGoBackDiaAndMed(){
-        medicineAns.SetActive(false);
+        //medicineAns.SetActive(false);
         diagnosisAns.SetActive(false);
         backButtonFromDiaAndMed.SetActive(false);
         diagnosisButton.SetActive(true);
         npcHoverDetector.SetActive(true);
+        MainCamera.SetActive(true);
+        MedCamera.SetActive(false);
         medicineButton.SetActive(HandleMedShown());
 
         //Outputs the final grade screen if both are anwsered correct
@@ -309,7 +314,10 @@ public class LevelButtonManager : MonoBehaviour
     public void OnClickOfMedicine(){
         diagnosisButton.SetActive(false);
         medicineButton.SetActive(false);
-        medicineAns.SetActive(true);
+        axiumButton.SetActive(false);
+        //medicineAns.SetActive(true);
+        MainCamera.SetActive(false);
+        MedCamera.SetActive(true);
         backButtonFromDiaAndMed.SetActive(true);
         npcHoverDetector.SetActive(false);
     }

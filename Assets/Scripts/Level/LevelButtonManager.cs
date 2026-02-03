@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 
 public class LevelButtonManager : MonoBehaviour
 {
@@ -14,8 +15,10 @@ public class LevelButtonManager : MonoBehaviour
     public GlobalVariables GV;
     public chatboxHandler cbh;
     public TalkingHandler TH;
-    public FireBase FB;
+    //public FireBase FB;
     public KeepPlayerPOS pos;//Used for the player POS when exit the scene
+    public UpdateScore US;
+
 
     //To keep track of a score of 100
     public float score = 0f;
@@ -243,7 +246,11 @@ public class LevelButtonManager : MonoBehaviour
         Debug.Log("In LBM: "+ GetLevelNumber());
 
         //Send the information the Firebase script to send the player score as a percent to specific level completed and make sure 2 decimal places
-        FB.UpdateCharacterField("playerExperience", score.ToString("F2"));
+        //FB.UpdateCharacterField("playerExperience", score.ToString("F2"));
+
+        // Send the level score to php script to update the level score in the database
+        UpdateScore updateScore = gameObject.AddComponent<UpdateScore>();
+        updateScore.CallUpdateLevelScore(PlayerPrefs.GetString("username"), "level" + GetLevelNumber() + "score", score);
 
         Debug.Log("Correct answer!");
         //Not really needed but reset everything

@@ -1,4 +1,46 @@
-*   commit fb277154f0ace5c89f054e9d0702e43f73010a8e (HEAD -> main, origin/main, origin/HEAD)
+* commit 3103ce002e26d66ffa002e1f19680900b47910cb (HEAD -> main, origin/main, origin/HEAD)
+| Author: bcook03 <bnc121203@outlook.com>
+| Date:   Fri Jan 23 10:04:15 2026 -0600
+| 
+|     New admin login and user updates (unattached)
+| 
+|  SQL_Database/ADlogin.php           | 62 ++++++++++++++++++++++++++++++++++++
+|  SQL_Database/changePassword.php    |  2 +-
+|  SQL_Database/login.php             |  2 +-
+|  SQL_Database/updateCharacterID.php | 42 ++++++++++++++++++++++++
+|  SQL_Database/updateScore.php       |  2 +-
+|  SQL_Database/userCatalog.php       |  0
+|  6 files changed, 107 insertions(+), 3 deletions(-)
+| 
+* commit 89a8179542213a9a6ade77407c8a00bd810224f2
+| Author: Griff <kharontheferryman31@gmail.com>
+| Date:   Tue Jan 20 15:07:59 2026 -0600
+| 
+|     png testing
+| 
+|  Assets/Images/medcabtest1.png.meta                | 123 +++
+|  Assets/Scenes/png test.unity                      | 755 +++++++++++++++
+|  Assets/Scenes/png test.unity.meta                 |   7 +
+|  Assets/Scripts/clicky.cs                          |  27 +
+|  Assets/Scripts/clicky.cs.meta                     |  11 +
+|  .../Fonts & Materials/Baloo2-ExtraBold SDF.asset  | 969 ++++++++++----------
+|  .../LiberationSans SDF - Fallback.asset           | 228 ++++-
+|  .../Fonts & Materials/LiberationSans SDF.asset    |   2 +-
+|  Assets/press_test.cs                              |  27 +
+|  Assets/press_test.cs.meta                         |  11 +
+|  10 files changed, 1676 insertions(+), 484 deletions(-)
+| 
+* commit 92e340ca26753cba03c28c0360a251fb37cc7fbd
+| Author: Griff <kharontheferryman31@gmail.com>
+| Date:   Tue Jan 20 13:34:05 2026 -0600
+| 
+|     testing ai sprite
+| 
+|  Assets/Images/medcabtest1.png |   Bin 0 -> 431322 bytes
+|  git-log.txt                   | 35259 ++++++++++++++++++++++++++++++++++++++
+|  2 files changed, 35259 insertions(+)
+|   
+*   commit fb277154f0ace5c89f054e9d0702e43f73010a8e
 |\  Merge: 682d5eff 9803c20d
 | | Author: Griff <kharontheferryman31@gmail.com>
 | | Date:   Thu Jan 15 14:06:29 2026 -0600
@@ -138,7 +180,7 @@
 | |       
 | |       Moved changes to personal branch
 | | 
-| * commit 72592d62e1d28b49426c0e8e492cafbf9e6e30f3 (origin/Sean's-Branch, Sean's-Branch)
+| * commit 72592d62e1d28b49426c0e8e492cafbf9e6e30f3 (origin/Sean's-Branch)
 |/  Author: Chaospeedy <seansdilday@gmail.com>
 |   Date:   Thu Nov 13 22:22:57 2025 -0600
 |   

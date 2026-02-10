@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 
 public class LevelButtonManager : MonoBehaviour
 {
+    public Rotate MedRotator;
     //Used functions from other scripts
     public GlobalVariables GV;
     public chatboxHandler cbh;
@@ -25,7 +26,7 @@ public class LevelButtonManager : MonoBehaviour
 
     public GameObject MainCamera;
     public GameObject MedCamera;
-
+    public GameObject CabinetDoor;
     public GameObject axiumUIPanel;
     public GameObject diagnosisButton;
     public GameObject medicineButton;
@@ -285,7 +286,7 @@ public class LevelButtonManager : MonoBehaviour
 
     //The back button for the DIA and MED buttons on the right hand corner of the screen
     public void OnClickGoBackDiaAndMed(){
-        //medicineAns.SetActive(false);
+        medicineAns.SetActive(false);
         diagnosisAns.SetActive(false);
         backButtonFromDiaAndMed.SetActive(false);
         diagnosisButton.SetActive(true);
@@ -312,15 +313,26 @@ public class LevelButtonManager : MonoBehaviour
 
     //Set other object to inactive while on this UI
     public void OnClickOfMedicine(){
-        diagnosisButton.SetActive(false);
-        medicineButton.SetActive(false);
-        axiumButton.SetActive(false);
-        //medicineAns.SetActive(true);
-        MainCamera.SetActive(false);
-        MedCamera.SetActive(true);
-        backButtonFromDiaAndMed.SetActive(true);
-        npcHoverDetector.SetActive(false);
+        StartCoroutine(OnClickOfMedicineRoutine());
     }
+
+    IEnumerator OnClickOfMedicineRoutine()
+{
+    MedRotator.RotateAssignedObject();
+
+    // wait for real time (not affected by timeScale)
+    yield return new WaitForSecondsRealtime(1.5f); // change delay as needed
+
+    diagnosisButton.SetActive(false);
+    medicineButton.SetActive(false);
+    axiumButton.SetActive(false);
+    medicineAns.SetActive(true);
+    MainCamera.SetActive(false);
+    MedCamera.SetActive(true);
+    backButtonFromDiaAndMed.SetActive(true);
+    npcHoverDetector.SetActive(false);
+}
+
 
     //Will display Med if isDiaCorrect meaning the user anwsered the question correctly and now shows medicine
     public bool HandleMedShown(){

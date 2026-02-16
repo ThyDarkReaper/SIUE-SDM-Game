@@ -3,14 +3,17 @@ The inside of my mouth burns. Please help me out!
 What is the etiology of this condition?
 1101588
 0Bacterial infection
-0Fungal infection
-1Viral infection
+1Fungal infection
+0Viral infection
 0Vitamin B12 deficiency
-Incorrect.
 Incorrect.
 Correct.
 Incorrect.
+Incorrect.
 8675309
+The patient’s history of recent long-term broad-spectrum antibiotic use, xerostomia, and wipeable white pseudomembranous plaques is classic for oral candidiasis...
+...most commonly caused by Candida albicans.
+Antibiotics disrupt normal oral flora, allowing opportunistic fungal overgrowth.
 What is the most appropriate initial management strategy for this patient's condition?
 1101588
 0Rx: Nystatin oint; Disp: 15 g tube; Sig: Apply a thin coat to the affected area after meals and at bedtime
@@ -22,47 +25,33 @@ Correct.
 Incorrect.
 Incorrect.
 8675309
+For uncomplicated pseudomembranous oral candidiasis, first-line therapy is topical antifungal treatment...
+...with nystatin oral suspension being the most commonly recommended initial agent.
+Although clotrimazole troches are also an effective topical option, they rely on adequate salivary flow to dissolve properly and distribute the medication across the oral mucosa.
+In patients with severe xerostomia, troches may not dissolve effectively, resulting in suboptimal drug delivery and reduced efficacy.
+Therefore, a liquid suspension that can be actively swished to coat the mucosa is preferred in this clinical setting.
+Systemic azoles (e.g., fluconazole) are reserved for refractory or severe cases.
 What is the mechanism of action of nystatin? 
 1101588
 0Irreversibly binds to bacterial β-lactamase enzymes 
-0Prevents generation and conduction of nerve impulses via Na+ channel blockade 
-0Inhibits fusion of host cell with the herpes viral envelope, preventing viral replication
 1Binds to ergosterol component of the cell membrane of sensitive fungal cells, altering membrane permeability
-Incorrect.
-Incorrect.
+0Inhibits fusion of host cell with the herpes viral envelope, preventing viral replication
+0Prevents generation and conduction of nerve impulses via Na+ channel blockade 
 Incorrect.
 Correct.
+Incorrect.
+Incorrect.
 8675309
-True or false: One notable adverse effect of nystatin is a bitter, foul taste.  
+Nystatin, a polyene antifungal medication, produces its effect by binding to ergosterol component of the cell membrane of sensitive fungal cells...
+...leading to alteration of fungal cell membrane permeability.
+One notable adverse effect of nystatin is a bitter, foul taste.  
 1101588
-0Sometimes True
-0False
 1True
-0Sometimes False
-Incorrect.
-Incorrect.
+0False
+0-
+0-
 Correct.
 Incorrect.
-8675309
-In managing the patient's condition, what is an essential consideration regarding long-term medication use?
-1101588
-1The potential for increased caries risk with prolonged use.
-0The need for immediate switch to systemic antiviral agents.
-0The need for immediate switch to topical steroid therapy.
-0The possible initiation of antiviral therapy.
-Correct.
-Incorrect.
-Incorrect.
-Incorrect.
-8675309
-What is the standard re-eval time-frame for this patient after initiation of pharmacotherapy?
-1101588
-0 3 days later
-1 14 days later
-0 1 month later
-0 6 months later
-Incorrect.
-Correct.
 Incorrect.
 Incorrect.
 8675309
@@ -71,9 +60,22 @@ You conduct a smear test on this patient. Which of the following statements is T
 0A smear test involves scraping the lesion, smearing it on a slide, and using a Gram stain to detect bacterial overgrowth.
 1A smear test can detect the presence of fungal hyphae.
 0A smear test is only indicated when a patient has chronic, non-wipeable oral lesions.
-0A smear test requires a full-thickness biopsy to confirm the presence of yeast organisms.
+0A smear test requires a full-thickness biopsy to confirm the presence of yeast organism.
 Incorrect.
 Correct.
 Incorrect.
 Incorrect.
+8675309
+Exfoliative cytology (smear test) involves scraping the lesion and staining (commonly PAS) to identify fungal hyphae or pseudohyphae, supporting a diagnosis of candidiasis.
+It does not require a biopsy, is not limited to non-wipeable lesions, and is not used to detect bacterial overgrowth via Gram stain.
+I appreciate your help. Do you know what the diagnosis would be for me? What medication would you suggest?
+1101588
+1Absolutely!
+1I pretty sure I know.
+1I'm not quite sure...
+1I have no idea.
+You got this!
+You got this!
+You got this!
+You got this!
 8675309

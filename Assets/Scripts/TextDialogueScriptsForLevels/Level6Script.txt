@@ -1,6 +1,7 @@
 Hello, I am [Name], I am a 45 year old male!
 This ulcer on the side of my tongue just won't heal.  Its been at least 3 months and it is still really painful.
-Which of the following is an appropriate first step in managing this patient's condition? 1101588
+Which of the following is an appropriate first step in managing this patient's condition? 
+1101588
 0Immediate start of chemotherapy   
 0HPeriodically follow-up with the patient to determine the need for further evaluation.
 1Performing a biopsy or providing immediate referral to a specialist.
@@ -32,7 +33,8 @@ Incorrect
 Incorrect
 Correct
 8675309
-In this patient, the presence of a firm, fixed, ipsilateral lymph node is concerning of a benign immune reaction rather than a sign of advanced disease. 1101588
+In this patient, the presence of a firm, fixed, ipsilateral lymph node is concerning of a benign immune reaction rather than a sign of advanced disease. 
+1101588
 0True
 1False
 0-

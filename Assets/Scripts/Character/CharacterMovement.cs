@@ -24,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
             float moveHorizontal = Input.GetAxisRaw("Horizontal");
             float moveVertical = Input.GetAxisRaw("Vertical");
 
-            Vector3 movement = (new Vector3(moveHorizontal, 0, moveVertical)).normalized;
+            Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical).normalized;
 
             rb.velocity = movement * speed * Time.fixedDeltaTime * 100;
         }

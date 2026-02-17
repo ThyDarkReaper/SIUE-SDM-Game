@@ -40,7 +40,7 @@ public class Confirmation : MonoBehaviour
 
         //firebase.UpdateCharacterField("playerCustomization", characterID);
 
-        UCID.CallUpdateCharacterID(PlayerPrefs.GetString("username"), characterID);
+        UCID.CallUpdateCharacterID(KeepPlayerName.Instance.GetCharacterName(), characterID);
 
     }
     void backButtonOnClick()

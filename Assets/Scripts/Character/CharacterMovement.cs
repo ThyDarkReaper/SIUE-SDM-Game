@@ -26,7 +26,7 @@ public class CharacterMovement : MonoBehaviour
 
             Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical).normalized;
 
-            rb.velocity = movement * speed * Time.fixedDeltaTime * 100;
+            rb.linearVelocity = movement * speed * Time.fixedDeltaTime * 100;
         }
     }
 }

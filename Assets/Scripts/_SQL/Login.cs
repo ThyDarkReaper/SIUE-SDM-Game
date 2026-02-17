@@ -8,12 +8,14 @@ using UnityEngine.Networking;
 
 public class Login : MonoBehaviour
 {
+    public GlobalVariables GV;
     public TMP_InputField usernameInput;
     public TMP_InputField passwordInput;
     public TextMeshProUGUI errorText;
 
     void Start()
     {
+        GV = GameObject.Find("GlobalVariables").GetComponent<GlobalVariables>();
         usernameInput = GameObject.Find("Username").GetComponent<TMP_InputField>();
         passwordInput = GameObject.Find("Password").GetComponent<TMP_InputField>();
         errorText = GameObject.Find("Error").GetComponent<TextMeshProUGUI>();
@@ -86,7 +88,7 @@ public class Login : MonoBehaviour
                         Debug.Log("User logged in successfully!");
                         PlayerPrefs.SetString("username", username);
                         KeepPlayerName.Instance.SetCharacterName(username);
-                        
+                        callLoadCharacterID(username);
                         SceneManager.LoadScene("WelcomeScene");
                         
 
@@ -122,6 +124,81 @@ public class Login : MonoBehaviour
         }
     }
 
+    private void callLoadCharacterID(string username)
+    {
+        StartCoroutine(loadCharacterID(username));
+    }
+
+    IEnumerator loadCharacterID(string username)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("username", username);
+
+        string url = "http://103-89-14-188.cloud-xip.com/loadCharacterID.php";
+        Debug.Log("Attempting to connect to: " + url);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        {
+            www.timeout = 30;
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                string errorDetails = $"Status Code: {www.responseCode}, Error: {www.error}";
+                if (www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
+                {
+                    errorDetails += $", Response: {www.downloadHandler.text}";
+                }
+                DisplayError("Network Error: " + errorDetails);
+                Debug.LogError("Network Error: " + errorDetails);
+            }
+            else
+            {
+                string responseText = www.downloadHandler.text;
+                Debug.Log("Server Response: " + responseText);
+
+                try
+                {
+                    // Extract character ID from JSON response
+                    int charIDStart = responseText.IndexOf("\"charID\":") + 9;
+                    if (charIDStart > 8)
+                    {
+                        int charIDEnd = responseText.IndexOf(",", charIDStart);
+                        if (charIDEnd > charIDStart)
+                        {
+                            string charIDString = responseText.Substring(charIDStart, charIDEnd - charIDStart).Trim();
+                            if (int.TryParse(charIDString, out int charID))
+                            {
+                                GV.setCharacterID(charID);
+                                Debug.Log("Character ID loaded successfully: " + charID);
+                            }
+                            else
+                            {
+                                DisplayError("Failed to parse character ID.");
+                                Debug.LogError("Parse Error: Unable to convert '" + charIDString + "' to an integer.");
+                            }
+                        }
+                        else
+                        {
+                            DisplayError("Character ID not found in response.");
+                            Debug.LogError("Parse Error: Character ID end delimiter not found.");
+                        }
+                    }
+                    else
+                    {
+                        DisplayError("Character ID not found in response.");
+                        Debug.LogError("Parse Error: Character ID start delimiter not found.");
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    DisplayError("Error parsing character ID: " + e.Message);
+                    Debug.LogError("JSON Parse Error: " + e.Message + " Response: " + responseText);
+                }
+            }
+        }
+
+    }
     public void DisplayError(string error)
     {
         errorText.text = error;

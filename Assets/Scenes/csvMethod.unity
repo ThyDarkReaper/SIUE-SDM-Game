@@ -1724,7 +1724,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2076561467}
         m_TargetAssemblyTypeName: CsvReader, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1785,3 +1785,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   csvFile: {fileID: 4900000, guid: db23f853156942c4dac150d3342d14db, type: 3}
+  loadingButton: {fileID: 2076561464}
+  textboxes:
+  - {fileID: 546076218}
+  - {fileID: 980484314}
+  - {fileID: 223098735}
+  - {fileID: 1797265623}
+  - {fileID: 24528645}
+  currentIndex: 0

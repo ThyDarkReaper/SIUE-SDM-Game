@@ -24,7 +24,7 @@
         }
 
         // Database connection with error handling
-        $con = @mysqli_connect('103-89-14-188.cloud-xip.com', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
+        $con = @mysqli_connect('localhost', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
         
         if (!$con) {
             echo json_encode(['success' => false, 'message' => 'Database connection failed']);

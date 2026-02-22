@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Confirmation : MonoBehaviour
 {
-    public UpdateCharID UCID;
+    public UpdateCharacterID UCID;
     //public FireBase firebase;
     public GlobalVariables gv;
     public Button submitButton;
@@ -40,7 +40,7 @@ public class Confirmation : MonoBehaviour
 
         //firebase.UpdateCharacterField("playerCustomization", characterID);
 
-        UCID.CallUpdateCharacterID(KeepPlayerName.Instance.GetCharacterName(), characterID);
+        UCID.CallUpdateCharID(KeepPlayerName.Instance.GetCharacterName(), characterID);
 
     }
     void backButtonOnClick()

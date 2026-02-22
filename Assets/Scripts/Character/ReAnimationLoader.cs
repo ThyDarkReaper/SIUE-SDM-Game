@@ -23,10 +23,8 @@ public class ReAnimationLoader : MonoBehaviour
         //ADD HERE WHATEVER YOU NEED TO GRAB CHARACTER ID
          if (Application.platform != RuntimePlatform.WebGLPlayer){
             Debug.Log("The code is not running on a WebGL build; as such, the Javascript functions will not be recognized.");
-            //FireBase tmp = GetComponent<FireBase>();
-            //tmp.enabled = false;
-            //return;
-            id = 1243211;//GV.getCharacterID();
+            if (GV == null) GV = GameObject.FindObjectOfType<GlobalVariables>();
+            id = GV.getCharacterID();
         }
         else {
             id = PlayerSaveData.Instance.GetPlayerCustomization();

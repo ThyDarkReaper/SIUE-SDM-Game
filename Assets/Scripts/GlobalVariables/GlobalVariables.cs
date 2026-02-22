@@ -107,11 +107,12 @@ public class GlobalVariables : MonoBehaviour
     }
     public int getCharacterID()
     {
-        return characterID;
+        return PlayerPrefs.GetInt("characterID", characterID);
     }
     public void setCharacterID(int newID)
     {
         characterID = newID;
+        PlayerPrefs.SetInt("characterID", newID);
     }
     public bool isTalking()
     {

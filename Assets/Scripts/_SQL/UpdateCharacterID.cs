@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class UpdateCharID : MonoBehaviour
+public class UpdateCharacterID : MonoBehaviour
 {
-    public void CallUpdateCharacterID(string username, int charID)
+    public void CallUpdateCharID(string username, int charID)
     {
-        StartCoroutine(UpdateCharacterID(username, charID));
+        StartCoroutine(UpdateCharID(username, charID));
     }
 
-    IEnumerator UpdateCharacterID(string username, int charID)
+    IEnumerator UpdateCharID(string username, int charID)
     {
         string postData = $"username={UnityWebRequest.EscapeURL(username)}&charID={UnityWebRequest.EscapeURL(charID.ToString())}";
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        string url = "http://103-89-14-188.cloud-xip.com/updateCharacterID.php";
+        string url = "http://103-89-14-188.cloud-xip.com/updateCharID.php";
         UnityWebRequest www = new UnityWebRequest(url, "POST");
         www.uploadHandler = new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = new DownloadHandlerBuffer();
@@ -25,9 +25,13 @@ public class UpdateCharID : MonoBehaviour
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)
-        {
-            Debug.LogError("Error updating character ID: " + www.error);
-        }
+            {
+                string errorDetails = $"Status Code: {www.responseCode}, Error: {www.error}";
+                if (www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
+                {
+                    errorDetails += $", Response: {www.downloadHandler.text}";
+                }
+            }
         else
         {
             Debug.Log("Character ID updated successfully" + www.downloadHandler.text);

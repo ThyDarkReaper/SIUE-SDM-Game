@@ -6,7 +6,7 @@ if (!isset($_POST['username'])) {
     exit;
 }
 
-$con = mysqli_connect('103-89-14-188.cloud-xip.com', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
+$con = mysqli_connect('localhost', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
 if (!$con) {
     echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
     exit;
@@ -19,7 +19,7 @@ if (empty($username)) {
     exit;
 }
 
-$query = "SELECT charID FROM users WHERE username = ?";
+$query = "SELECT characterID FROM users WHERE username = ?";
 $stmt = mysqli_prepare($con, $query);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "s", $username);
@@ -28,7 +28,7 @@ if ($stmt) {
     if ($result) {
         $received = mysqli_stmt_get_result($stmt);
         if ($received && $row = mysqli_fetch_assoc($received)) {
-            echo json_encode(['success' => true, 'charID' => $row['charID']]);
+            echo json_encode(['success' => true, 'characterID' => $row['characterID']]);
         } else {
             echo json_encode(['success' => false, 'message' => 'User not found']);
         }

@@ -7,7 +7,7 @@
         exit();
     }
 
-    $con = mysqli_connect(hostname: '103-89-14-188.cloud-xip.com', username: 'root', password: 'GoDentalCougars66@!', database: 'oral_medicine', port: 3306);
+    $con = mysqli_connect(hostname: 'localhost', username: 'root', password: 'GoDentalCougars66@!', database: 'oral_medicine', port: 3306);
     if (!$con) {
         echo json_encode(value: ['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
         exit();

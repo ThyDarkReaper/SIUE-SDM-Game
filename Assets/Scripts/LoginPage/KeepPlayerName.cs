@@ -11,7 +11,7 @@ public class KeepPlayerName : MonoBehaviour
     [SerializeField]
     private int volume = 5;
    
-    void Awake()
+    public void Awake()
     {
         if(Instance == null){
             Instance = this;

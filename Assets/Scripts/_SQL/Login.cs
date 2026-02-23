@@ -15,7 +15,7 @@ public class Login : MonoBehaviour
 
     void Start()
     {
-        GV = GameObject.FindObjectOfType<GlobalVariables>();
+        GV = GameObject.Find("GlobalVariables").GetComponent<GlobalVariables>();
         usernameInput = GameObject.Find("Username").GetComponent<TMP_InputField>();
         passwordInput = GameObject.Find("Password").GetComponent<TMP_InputField>();
         errorText = GameObject.Find("Error").GetComponent<TextMeshProUGUI>();
@@ -87,7 +87,6 @@ public class Login : MonoBehaviour
                     {
                         Debug.Log("User logged in successfully!");
                         PlayerPrefs.SetString("username", username);
-                        KeepPlayerName.Instance.Awake();
                         KeepPlayerName.Instance.SetCharacterName(username);
                         callLoadCharacterID(username);
                         SceneManager.LoadScene("WelcomeScene");
@@ -161,13 +160,10 @@ public class Login : MonoBehaviour
                 try
                 {
                     // Extract character ID from JSON response
-                    int charIDStart = responseText.IndexOf("\"characterID\":") + 14;
-                    if (charIDStart > 13)
+                    int charIDStart = responseText.IndexOf("\"charID\":") + 9;
+                    if (charIDStart > 8)
                     {
                         int charIDEnd = responseText.IndexOf(",", charIDStart);
-                        // characterID may be the last field, so fall back to closing brace
-                        if (charIDEnd < 0)
-                            charIDEnd = responseText.IndexOf("}", charIDStart);
                         if (charIDEnd > charIDStart)
                         {
                             string charIDString = responseText.Substring(charIDStart, charIDEnd - charIDStart).Trim();

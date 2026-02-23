@@ -2421,14 +2421,6 @@ PrefabInstance:
       propertyPath: GV
       value: 
       objectReference: {fileID: 582504655}
-    - target: {fileID: 1204411437, guid: 37ed52cef54881d4b985a29f40e94204, type: 3}
-      propertyPath: RAL
-      value: 
-      objectReference: {fileID: 582504658}
-    - target: {fileID: 1204411437, guid: 37ed52cef54881d4b985a29f40e94204, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2391823168647428408, guid: 37ed52cef54881d4b985a29f40e94204, type: 3}
       propertyPath: m_Name
       value: MCharacter

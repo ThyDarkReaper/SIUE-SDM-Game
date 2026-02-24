@@ -87,11 +87,9 @@ public class Login : MonoBehaviour
                     {
                         Debug.Log("User logged in successfully!");
                         PlayerPrefs.SetString("username", username);
-<<<<<<< HEAD
+
                         KeepPlayerName.Instance.SetCharacterName(username);
                         callLoadCharacterID(username);
-=======
->>>>>>> parent of bab5fcc7 (TMP missing on branch for CharacterCreator scene, updated SQL files)
                         SceneManager.LoadScene("WelcomeScene");
                     }
                     // User login failed

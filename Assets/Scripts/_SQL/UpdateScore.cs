@@ -16,7 +16,7 @@ public class UpdateScore : MonoBehaviour
         string postData = $"username={UnityWebRequest.EscapeURL(username)}&level={UnityWebRequest.EscapeURL(levelID)}&score={score}";
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        string url = "http://103-89-14-188.cloud-xip.com/updateScore.php";
+        string url = "http://103-89-14-161.cloud-xip.com/updateScore.php";
         UnityWebRequest www = new UnityWebRequest(url, "POST");
         www.uploadHandler = new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = new DownloadHandlerBuffer();

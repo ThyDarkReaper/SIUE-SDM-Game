@@ -183,6 +183,7 @@ public class AdminPanel : MonoBehaviour
     } 
 
     public void Return(){
+        Application.ExternalCall("hideTextInput");
         SceneManager.LoadScene("Login");
     }
 

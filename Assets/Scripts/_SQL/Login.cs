@@ -57,7 +57,7 @@ public class Login : MonoBehaviour
         form.AddField("username", username);
         form.AddField("password", password);
 
-        string url = "http://103-89-14-188.cloud-xip.com/login.php";
+        string url = "http://103-89-14-161.cloud-xip.com/login.php";
         Debug.Log("Attempting to connect to: " + url);
         
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))
@@ -87,11 +87,12 @@ public class Login : MonoBehaviour
                     {
                         Debug.Log("User logged in successfully!");
                         PlayerPrefs.SetString("username", username);
+<<<<<<< HEAD
                         KeepPlayerName.Instance.SetCharacterName(username);
                         callLoadCharacterID(username);
+=======
+>>>>>>> parent of bab5fcc7 (TMP missing on branch for CharacterCreator scene, updated SQL files)
                         SceneManager.LoadScene("WelcomeScene");
-                        
-
                     }
                     // User login failed
                     else if (responseText.Contains("\"success\":false"))

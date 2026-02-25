@@ -1414,6 +1414,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8346865604516115514, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
   m_PrefabInstance: {fileID: 466935450}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &466935452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865603799200883, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 466935450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &466935453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865604609091109, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 466935450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &466935454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865605772350812, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 466935450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &466935455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865604026665648, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 466935450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &473114377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3961190741536670933, guid: 5b5aea8c3144544028063b38853a8c80, type: 3}
@@ -2399,10 +2443,10 @@ MonoBehaviour:
   - {fileID: 747860214}
   - {fileID: 1412469766}
   diaButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 466935455}
+  - {fileID: 466935454}
+  - {fileID: 466935453}
+  - {fileID: 466935452}
   diaFile: {fileID: 4900000, guid: 01aec51ad15d7574fbe68bc7ea3f885d, type: 3}
   medFile: {fileID: 4900000, guid: 8a1484d778a5f694a92a55e879c9fc6a, type: 3}
   scoreText: {fileID: 1931509742}

@@ -1217,6 +1217,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8346865604516115514, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
   m_PrefabInstance: {fileID: 420616982}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &420616984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865603799200883, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 420616982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &420616985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865604609091109, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 420616982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &420616986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865605772350812, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 420616982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &420616987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8346865604026665648, guid: ae3afbb6bc961a343b60d7c2a1b303d5, type: 3}
+  m_PrefabInstance: {fileID: 420616982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &450983279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,10 +2593,10 @@ MonoBehaviour:
   - {fileID: 747860214}
   - {fileID: 1412469766}
   diaButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 420616987}
+  - {fileID: 420616986}
+  - {fileID: 420616985}
+  - {fileID: 420616984}
   diaFile: {fileID: 4900000, guid: 74e1b19b7b04d2748ae165ab06a18d67, type: 3}
   medFile: {fileID: 4900000, guid: 38cb764aa234a164f82d00337d1f1fe9, type: 3}
   scoreText: {fileID: 1931509742}

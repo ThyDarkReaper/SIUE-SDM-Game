@@ -1,0 +1,10 @@
+Patient: 
+Male, 45 years old
+
+Chief Complaint: 
+"I have a painful ulcer on the side of my tongue that hasn't healed for over three mounths."
+
+Current Findings:
+Intraoral Exam: Ulcerative lesion on the lateral border of the tongue with indurated margins, approximately 1.5cm in diameter.
+
+Extreoral Exam: Noticable firm, fixed, lymph node on the ipsilateral beck.

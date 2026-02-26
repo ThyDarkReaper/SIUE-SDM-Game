@@ -1,0 +1,57 @@
+Hello, I am [Name], I am a 56 year old female!
+My gums burn, get red and peel off easily.  What could be causing this issue?
+You suspect mucous membrane pemphigoid. Based on the pathogenesis of this condition, which of the following statements is TRUE? 
+1101588
+0This condition is primarily due to autoantibodies targeting desmosomal proteins, leading to intraepithelial acantholysis. 
+1The disease process affects mucosal surfaces such as the mouth, eyes, and anogenital region.
+0Because this condition does not typically involve the skin, it is classified as a localized, self-limiting disorder that does not require systemic therapy. 
+0This condition is best managed conservatively with topical steroids, as systemic therapy is rarely needed due to its self-limiting nature. 
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309
+The systemic nature of this condition, which of the following complications poses the GREATEST long-term risk if left untreated? 
+1101588
+0Progression to full-thickness oral mucosal necrosis with secondary bacterial superinfection.
+1Fibrosis and scarring of the ocular mucosa, potentially leading to symblepharon and blindness.
+0Cutaneous, pruritic, plaque-type lesions on the flexor areas of the skin. 
+0Chronic inflammation of the oral mucosa leading to secondary dysplasia.
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309
+Which initial treatment approach is advisable for a mild manifestation of this disease on the gingivae? 
+1101588
+0Intravenous immunoglobulin. 
+1Topical corticosteroids using a custom-made tray. 
+0Long-term use of high-dose systemic steroids. 
+0Systemic antiviral medications. 
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309
+Management by a dental specialist alone is sufficient for this condition. 
+1101588
+0True
+1False
+0-
+0-
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309
+Doxycycline is reserved for severe cases of this condition, whereas mild to moderate disease may require Rituximab.  
+1101588
+0True
+1False
+0-
+0-
+Incorrect
+Correct
+Incorrect
+Incorrect
+8675309

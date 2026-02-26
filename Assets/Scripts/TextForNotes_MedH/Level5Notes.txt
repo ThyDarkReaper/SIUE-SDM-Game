@@ -1,0 +1,8 @@
+Patient: 
+Male, 27 years old
+
+Chief Complaint: 
+"I get little ulcers from time to time inside my mouth and I don't know why."
+
+Current Findings:
+Patient presents with round to ovoid, shallow ulcers on the buzzal and labial mucosea.

@@ -13,7 +13,7 @@ public class UpdateScore : MonoBehaviour
 
     IEnumerator UpdateLevelScore(string username, string levelID, float score)
     {
-        string postData = $"username={UnityWebRequest.EscapeURL(username)}&levelID={UnityWebRequest.EscapeURL(levelID)}&score={score}";
+        string postData = $"username={UnityWebRequest.EscapeURL(username)}&level={UnityWebRequest.EscapeURL(levelID)}&score={score}";
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
         string url = "http://103-89-14-161.cloud-xip.com/updateScore.php";

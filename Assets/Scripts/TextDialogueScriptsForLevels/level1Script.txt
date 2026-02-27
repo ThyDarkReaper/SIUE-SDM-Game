@@ -7,10 +7,10 @@ Which of the following best describes the pathogenesis of the condition observed
 0Viral infection leads to epithelial dysplasia and malignant transformation of mucosal tissues
 0Excessive keratin production due to chronic irritation causes hyperkeratosis
 1T-cell mediated response leading to apoptosis of basal cells and subepithelial band-like infiltrate
-Wrong
-Wrong
-Wrong
-Right
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
 8675309
 This condition is considered a cell-mediated autoimmune disease in which the immune system targets epithelial cells, particularly those in the basal layer. 
 Histopathologically, this process is characterized by a dense, band-like subepithelial infiltrate composed primarily of T lymphocytes and apoptosis of basal cells.

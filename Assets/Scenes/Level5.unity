@@ -2512,7 +2512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 969857612}
-  newSprite: {fileID: 21300000, guid: 85e0544541b41f6488baac3e34628357, type: 3}
+  newSprite: {fileID: 21300000, guid: 87106101a5e857242b5816672b49ad68, type: 3}
   noteText: {fileID: 4900000, guid: 00ddd921b2d73294eb31c55181cbb3f2, type: 3}
   medHistoryText: {fileID: 4900000, guid: 34494ac30cbaa5945bbe80cbe38389f0, type: 3}
   textMeshPro2: {fileID: 299209637}
@@ -6061,7 +6061,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4b96d93bfdb554d469f41744053f774e, type: 2}
+  - {fileID: 2100000, guid: df54acd516236b643a97c411297d8078, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6313,7 +6313,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84fc60bd07063a64c8d5045fdfa98eeb, type: 2}
+  - {fileID: 2100000, guid: cde8b55f1a538f44ebe1f03425dead43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6411,7 +6411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2cf9d25d1db6d894c820741100ae5b6f, type: 2}
+  - {fileID: 2100000, guid: 625fe849cf9d77d49a8bebdf572cd9e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6467,7 +6467,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 216eb3a7164434c45bdb40760c5c4135, type: 2}
+  - {fileID: 2100000, guid: 5388c136f5d1a4547b4a2ff62b27b6b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

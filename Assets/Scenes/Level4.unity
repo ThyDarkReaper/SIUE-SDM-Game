@@ -2429,7 +2429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 969857612}
-  newSprite: {fileID: 21300000, guid: 85e0544541b41f6488baac3e34628357, type: 3}
+  newSprite: {fileID: 21300000, guid: c802e3e563ba9344b88967bd6da52e0c, type: 3}
   noteText: {fileID: 4900000, guid: a3b9dce242104ff4895563ea7fdc102d, type: 3}
   medHistoryText: {fileID: 4900000, guid: 07c4c84d46fedd74288b788adbc47135, type: 3}
   textMeshPro2: {fileID: 299209637}

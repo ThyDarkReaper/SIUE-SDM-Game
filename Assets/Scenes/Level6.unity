@@ -2662,7 +2662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 969857612}
-  newSprite: {fileID: 21300000, guid: 85e0544541b41f6488baac3e34628357, type: 3}
+  newSprite: {fileID: 21300000, guid: dc68c8afcda27cb4cae3ced772c82a17, type: 3}
   noteText: {fileID: 4900000, guid: 38b08dd3e868cb649895470febce363b, type: 3}
   medHistoryText: {fileID: 4900000, guid: 63390833aec74b74784ffea25760aa3f, type: 3}
   textMeshPro2: {fileID: 299209637}
@@ -2679,12 +2679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fffd11478e793468f9e1ea96004f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LBM: {fileID: 0}
-  numberToTrackQuestions: 1101588
-  countOfQuestions: 0
-  totalPercentWorth: 50
-  questionWorth: 0
-  npcScript: {fileID: 4900000, guid: dbc0123a947eff24885187cc3038d69f, type: 3}
 --- !u!114 &980951603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3841,6 +3835,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 2445143681511225048, guid: 4c7abafaaa03d450caa20b267878fb8f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c802e3e563ba9344b88967bd6da52e0c, type: 3}
     - target: {fileID: 3184851672670186223, guid: 4c7abafaaa03d450caa20b267878fb8f, type: 3}
       propertyPath: m_IsActive
       value: 0

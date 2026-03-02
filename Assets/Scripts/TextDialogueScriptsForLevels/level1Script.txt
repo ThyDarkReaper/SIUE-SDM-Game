@@ -5,32 +5,79 @@ Which of the following best describes the pathogenesis of the condition observed
 1101588
 0Bacterial toxins induce direct damage to epithelial cells, leading to ulceration and sloughing of the mucosa
 0Viral infection leads to epithelial dysplasia and malignant transformation of mucosal tissues
-1T-cell mediated response leading to apoptosis of basal cells and subepithelial band-like infiltrate
 0Excessive keratin production due to chronic irritation causes hyperkeratosis
-WebMD told me that wasn't the case.
-WebMD told me that wasn't the case.
-Correct, at least thats what chatGPT said in the waiting room.
-WebMD told me that wasn't the case.
+1T-cell mediated response leading to apoptosis of basal cells and subepithelial band-like infiltrate
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
 8675309
+This condition is considered a cell-mediated autoimmune disease in which the immune system targets epithelial cells, particularly those in the basal layer. 
+Histopathologically, this process is characterized by a dense, band-like subepithelial infiltrate composed primarily of T lymphocytes and apoptosis of basal cells.
+There is no evidence of antibody-mediated involvement, supporting a T-cell–driven mechanismrather than a humoral one
 What is the most appropriate initial management strategy for this patient's condition?
 1101588
-0Rx: Fluocinonide (Lidex ) gel; Disp: 30 g tube\n Sig: Apply thin film to affected site(s) after each meal and at bedtime. NPO 30 min. after.
+0Rx: Fluocinonide (Lidex ) gel; Disp: 30 g tube Sig: Apply thin film to affected site(s) after each meal and at bedtime. NPO 30 min. after.
 1Rx: Dexamethasone oral solution 0.5mg/5mL; Disp: 500 mL; Sig:Rinse with 1 tsp (5mL) for 2 3 min four; times daily and expectorate. NPO 30 min. after
 0Rx: Tacrolimus 0.1% oint; Disp : 30 g; Sig: Apply thin film to affected site(s) twice daily. NPO 30 min. after.
 0Rx: 10% Docosanol (Abreva) cream (OTC); Disp: 2 (two) g tube; Sig: Dab on lesion five times daily during waking hrs for four days beginning when symptoms first occur.
-Nope
-Yes
-Nope
-Nope
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
-Which medication has anti-inflammatory and immunosuppressive actions that would make it an effective therapy for this patient? 
+Dexamethasone is a long-acting corticosteroid with anti-inflammatory and immunosuppressive effects. 
+Given the generalized bilateral intraoral involvement of the buccal mucosae, labial mucosae, and tongue in this patient...
+...using an oral solution swished throughout the mouth helps ensure adequate contact with all affected surfaces.
+Which medication is most likely to be a necessary addition to this patient's treatment plan?
 1101588
-0Acyclovir 
-0Clotrimazole
-0Docosanol
-1Dexamethasone 
-No
-No
-No
-Correct
+1Rx: Clotrimazole (Mycelex) troches 10 mg Disp : 70 troches Sig : Let one troche dissolve in mouth five times daily for 14 days. Do not chew. NPO 30 min.after
+0Rx: Nystatin triamcinolone acetonide ( Mycolog II, Mytrex ) oint Disp : 15 g tube. Sig: Apply to affected area after each meal and at bedtime.
+0Rx: Acyclovir (Zovirax) caps 800mg. Disp: 35 (thirty-five) caps. Sig: Take one cap five times daily for seven days.
+0Rx: 10% Docosanol (Abreva) cream (OTC) Disp: 2 (two) g tube Sig: Dab on lesion five times daily during waking hrs for four days beginning when symptoms first occur.
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+8675309
+Clotrimazole is an azole antifungal medication that inhibits the conversion of lanosterol to ergosterol in fungal cells by blocking demethylation.
+The use of strong topical steroids can sometimes lead to the emergence of a fungal infection.
+In such cases, it may be necessary to initiate parallel treatment with antifungal drugs, especially if topical steroids are used more than once daily.
+Which of the following findings might also be present in this patient?
+1101588
+1Pruritic, flat-topped papules on the flexor surfaces of the arms and legs
+0Target-like lesions with central clearing on the palms and soles
+0Painful vesicles and ulcerations on the hard palate and gingiva, accompanied by fever and lymphadenopathy
+0Diffuse skin thickening with sclerotic plaques on the fingers and face
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+8675309
+The correct answer is pruritic, flat-topped papules on the flexor surfaces of the arms and legs because oral lichen planus (OLP) can also involve extraoral sites, including the skin.
+Approximately 15% of patients with OLP develop cutaneous lesions, which classically present as pruritic, erythematous to violaceous, flat-topped papules.
+These lesions most commonly occur on the flexor surfaces of the arms and legs, making this finding consistent with the patient’s condition.
+The interlacing, net-like white lines observed in this condition are commonly referred to as Wickham’s striae.
+1101588
+1True
+0False
+0-
+0-
+That's right!
+Actually, this is true.
+Well, it couldn't possibly be this one.
+Well, it couldn't possibly be this one.
+8675309
+Wickham’s striae are a hallmark feature of this condition and present as hyperkeratotic white striations arranged in an interlacing, net-like pattern.
+The net-like appearance reflects the Latin word rete (meaning “net”), which describes the characteristic linear white lines seen clinically.
+I appreciate your help. Do you know what the diagnosis would be for me? What medication would you suggest?
+1101588
+1Absolutely!
+1I pretty sure I know.
+1I'm not quite sure...
+1I have no idea.
+You got this!
+You got this!
+You got this!
+You got this!
 8675309

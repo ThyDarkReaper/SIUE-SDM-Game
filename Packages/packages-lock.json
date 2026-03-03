@@ -152,11 +152,7 @@
       }
     },
     "com.unity.visualscripting": {
-<<<<<<< HEAD
       "version": "1.9.10",
-=======
-      "version": "1.9.9",
->>>>>>> Sean's-Branch
       "depth": 0,
       "source": "registry",
       "dependencies": {

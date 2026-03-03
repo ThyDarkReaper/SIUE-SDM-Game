@@ -8,33 +8,37 @@ public class ElevatorButtonManager : MonoBehaviour
 {
 
     string sceneName; 
-    public float duration = 3.0f; 
+    public float duration = 2f; 
     private bool isMoving = false; 
 
 
     [SerializeField] GameObject doorPart1;
     [SerializeField] GameObject doorPart2;
+    [SerializeField] GameObject fadePrefab;
     //Go to Main Floor on 1
     public void OnFloor1Button(){
         sceneName = "LevelSelectorMainFloor";
-        Invoke("ChangeFloor", 1f);
+        Invoke("ChangeFloor", 1.5f);
+        Invoke("FadeOut", 1.25f);
     }
 
     //Go to LevelSelector Floor 2 on 2
     public void OnFloor2Button(){
         sceneName = "LevelSelector2ndFloor";
-        Invoke("ChangeFloor", 5f);
+        Invoke("ChangeFloor", 1.5f);
+        Invoke("FadeOut", 1.25f);
     }
 
-    private void ChangeFloor(){
-        SceneManager.LoadScene(sceneName);
-    }
-
+    
     public void OpenElevatorDoor(){
         if (!isMoving)
         {
             StartCoroutine(MoveRoutine());
         }
+    }
+
+    private void ChangeFloor(){
+        SceneManager.LoadScene(sceneName);
     }
 
     private IEnumerator MoveRoutine()
@@ -48,16 +52,19 @@ public class ElevatorButtonManager : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            // Use Vector3.Lerp to smoothly interpolate between start and end positions
             doorPart1.transform.position = Vector3.Lerp(startPosition1, endPosition1, (elapsedTime / duration));
             doorPart2.transform.position = Vector3.Lerp(startPosition2, endPosition2, (elapsedTime / duration));
             elapsedTime += Time.deltaTime;
-            yield return null; // Wait until the next frame
+            yield return null;
         }
 
-        // Ensure the object reaches the exact end position
         doorPart1.transform.position = endPosition1;
         doorPart2.transform.position = endPosition2;
         isMoving = false;
+    }
+
+    private void FadeOut()
+    {
+        Instantiate(fadePrefab);
     }
 }

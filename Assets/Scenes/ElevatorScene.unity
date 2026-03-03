@@ -245,6 +245,7 @@ MonoBehaviour:
   duration: 2
   doorPart1: {fileID: 0}
   doorPart2: {fileID: 0}
+  fadePrefab: {fileID: 0}
 --- !u!1 &581232549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1374,7 @@ MonoBehaviour:
   duration: 2
   doorPart1: {fileID: 247405900}
   doorPart2: {fileID: 1145510016}
+  fadePrefab: {fileID: 6536150287628382011, guid: 4b6ee565a88ef3c4fb57f5a5c6bfc5ae, type: 3}
 --- !u!4 &1723627087
 Transform:
   m_ObjectHideFlags: 0

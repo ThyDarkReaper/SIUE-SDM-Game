@@ -251,13 +251,10 @@ public class LevelButtonManager : MonoBehaviour
 
         //Send the information the Firebase script to send the player score as a percent to specific level completed and make sure 2 decimal places
         //FB.UpdateCharacterField("playerExperience", score.ToString("F2"));
-<<<<<<< HEAD
 
         // Send the level score to php script to update the level score in the database
         UpdateScore updateScore = gameObject.AddComponent<UpdateScore>();
         updateScore.CallUpdateLevelScore(PlayerPrefs.GetString("username"), "level" + GetLevelNumber() + "score", score);
-=======
->>>>>>> Sean's-Branch
 
         Debug.Log("Correct answer!");
         //Not really needed but reset everything

@@ -1297,7 +1297,7 @@ MonoBehaviour:
   chatBoxUI: {fileID: 0}
   GV: {fileID: 582504655}
   LBM: {fileID: 0}
-  FadePrefab: {fileID: 0}
+  FadePrefab: {fileID: 6536150287628382011, guid: 90418acef8dbd0848b18f4dc3ccb3fdd, type: 3}
 --- !u!114 &582504660
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,12 +27,12 @@ public class GlobalVariables : MonoBehaviour
     //this is for talking audio
     void OnDestroy()
     {
-        KeepPlayerName.Instance.SetVolume(volume);
+        //KeepPlayerName.Instance.SetVolume(volume);
     }
     void Awake()
     {
         //KeepPlayerName kpn = GetComponent<KeepPlayerName>();
-        volume = KeepPlayerName.Instance.GetVolume();
+        //volume = KeepPlayerName.Instance.GetVolume();
     }
     //Signal for the talking audio
     public void setTalkingSound(bool sound)

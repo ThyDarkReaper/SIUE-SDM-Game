@@ -1818,7 +1818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GV: {fileID: 1797926739}
-  song: {fileID: 8300000, guid: f85708d7537702d4cb53d1b1fa6d614b, type: 3}
+  song: {fileID: 8300000, guid: 3cb60974b7e090c4897de1c4dbe11720, type: 3}
 --- !u!1 &1824713778
 GameObject:
   m_ObjectHideFlags: 0

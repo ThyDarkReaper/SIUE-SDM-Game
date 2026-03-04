@@ -7,7 +7,7 @@ public class MusicHandler : MonoBehaviour
 {
     
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     public GlobalVariables GV;
     public AudioClip song;
 

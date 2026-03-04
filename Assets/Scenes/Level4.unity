@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f654dd35660df4bb0a25e421ea4dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MedRotator: {fileID: 0}
+  MedRotator: {fileID: 1198479854}
   GV: {fileID: 1521072175}
   cbh: {fileID: 3631656714722373795}
   TH: {fileID: 0}
@@ -3754,7 +3754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975488315723787498, guid: 4c7abafaaa03d450caa20b267878fb8f, type: 3}
       propertyPath: m_text
-      value: 'Name: Tim
+      value: 'Name: Jessica
 
 '
       objectReference: {fileID: 0}
@@ -4021,6 +4021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914caa24a9b7ef40b328c41b8977136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   GV: {fileID: 1521072175}
   song: {fileID: 8300000, guid: f85708d7537702d4cb53d1b1fa6d614b, type: 3}
 --- !u!1 &1540037300

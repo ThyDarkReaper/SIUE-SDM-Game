@@ -867,8 +867,9 @@ GameObject:
   - component: {fileID: 316676847}
   - component: {fileID: 316676846}
   - component: {fileID: 316676849}
+  - component: {fileID: 316676850}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,7 +902,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &316676847
 MeshRenderer:
@@ -959,11 +960,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316676844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adcfe405ced5a4404933d700ad451c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &316676850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316676844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc0d8fb81ce34742817f32a91a3f17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  indicatorCubes: []
+  levelSelector: {fileID: 1974623090}
+  pickedLevel: {fileID: 0}
+  characterForPOS: {fileID: 0}
+  targetSceneName: ElevatorScene
+  FadePrefab: {fileID: 6536150287628382011, guid: 4b6ee565a88ef3c4fb57f5a5c6bfc5ae, type: 3}
 --- !u!1001 &383756347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2391,6 +2411,11 @@ Transform:
 --- !u!1 &1830072574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4028541005627782752, guid: b16f9a1904ecb1040a2b2cf7e9839bd0, type: 3}
+  m_PrefabInstance: {fileID: 8204698053645177779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1974623090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 375581586102337540, guid: b16f9a1904ecb1040a2b2cf7e9839bd0, type: 3}
   m_PrefabInstance: {fileID: 8204698053645177779}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1986720427 stripped

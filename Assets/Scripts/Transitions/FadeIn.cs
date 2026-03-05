@@ -34,8 +34,8 @@ public class FadeIn : MonoBehaviour
     }
 
     private void Fade() {
-        time += 0.05f;
-        b.color = new Color(0,0,0,b.color.a - 0.05f);
+        time += 0.1f;
+        b.color = new Color(0,0,0,b.color.a - 0.01f);
 
         if (time > 1) {
             b.color = new Color(0,0,0,0);

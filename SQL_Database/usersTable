@@ -1,0 +1,22 @@
+CREATE TABLE users (
+    id int(10) NOT NULL,
+    username varchar(36) NOT NULL,
+    hash varchar(100) NOT NULL,
+    salt varchar(50) NOT NULL,
+    characterID int(11) NOT NULL DEFAULT 1111111,
+    level1score int(11) DEFAULT NULL,
+    level2score int(11) DEFAULT NULL,
+    level3score int(11) DEFAULT NULL,
+    level4score int(11) DEFAULT NULL,
+    level5score int(11) DEFAULT NULL,
+    level6score int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO users (id, username, hash, salt, characterID, level1score, level2score, level3score, level4score, level5score, level6score) VALUES
+(1, 'test123', '$5$rounds=5000$steamedhamstest1$5vHgcjKuzX2HLsStpSkj/gojBXB5.t1KOLCjrYmYvN.', '$5$rounds=5000$steamedhamstest123$', 1111111, NULL, NULL, NULL, NULL, NULL, NULL);
+
+ALTER TABLE users
+    ADD PRIMARY KEY (id),
+    ADD UNIQUE KEY username (username);
+    MODIFY id int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;

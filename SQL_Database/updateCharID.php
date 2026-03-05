@@ -2,7 +2,7 @@
 
     header(header: 'Content-Type: application/json');
 
-    if(!isset($_POST['username']) || !isset($_POST['score']) || !isset($_POST['level'])) {
+    if(!isset($_POST['username']) || !isset($_POST['charID'])) {
         echo json_encode(value: ['success' => false, 'message' => 'Missing required fields']);
         exit();
     }
@@ -14,25 +14,24 @@
     }
 
     $username = $_POST['username'];
-    $score = $_POST['score'];
-    $level = $_POST['level'];
+    $charID = $_POST['charID'];
 
-    if (empty($username) || !is_numeric($score) || !is_string($level)) {
-        echo json_encode(value: ['success' => false, 'message' => 'Invalid input data', 'username type' => gettype($username), 'score type' => gettype($score), 'level type' => gettype($level)]);
+    if (empty($username) || !is_numeric($charID)) {
+        echo json_encode(value: ['success' => false, 'message' => 'Invalid input data']);
         exit();
     }
 
-    $column = $level;
-    $query = "UPDATE users SET $column = ? WHERE username = ?";
+    $query = "UPDATE users SET charID = ? where username = ?";
     $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "is", $score, $username);
+    mysqli_stmt_bind_param($stmt, "is", $charID, $username);
     $result = mysqli_stmt_execute($stmt);
     if ($result) {
         $affectedRows = mysqli_stmt_affected_rows($stmt);
         if ($affectedRows == 1) {
-            echo json_encode(value: ['success' => true, 'message' => "Level $level score updated successfully"]);
+            echo json_encode(value: ['success' => true, 'message' => 'Character ID updated successfully']);
         } else {
             echo json_encode(value: ['success' => false, 'message' => 'User not found or no changes made']);
+
         }
     } else {
         echo json_encode(value: ['success' => false, 'message' => 'Failed to execute query']);

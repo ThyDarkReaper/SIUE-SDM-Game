@@ -25,6 +25,7 @@ public class SettingsMenu : MonoBehaviour
         HelpPanel.SetActive(false);
     }
     public void OnExitButton(){ // just returns user to login screen, more for player's comfort
-        SceneManager.LoadScene("Login");
+        //SceneManager.LoadScene("Login");
+        Application.Quit(); //temp quits the game instead of sending to scene that does not function
     }
 }

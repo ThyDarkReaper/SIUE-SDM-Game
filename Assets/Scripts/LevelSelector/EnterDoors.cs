@@ -48,8 +48,7 @@ public class EnterDoors : MonoBehaviour
             KeepPlayerPOS.Instance.SetPlayerPosition(characterForPOS);//Added to grab the users POS before entering scene
             Instantiate(FadePrefab); //instatiates an object that fades the screen to black
             Invoke("Change", 0.2f);//Change scene after the fade
-            //SceneManager.LoadScene(targetSceneName);  
-           //ReplacePrefab();
+
         }
     }
 
@@ -67,99 +66,8 @@ public class EnterDoors : MonoBehaviour
     }
 
 
-    //No longer using rn (Still no longer using this)
-    private void ReplacePrefab()
-    {
-        if(levelSelector != null && pickedLevel)
-        {
-            Vector3 oldPos = levelSelector.transform.position;
-            Quaternion oldRotation = levelSelector.transform.rotation;
-
-            Destroy(levelSelector);
-
-            GameObject newObject = Instantiate(pickedLevel, oldPos, oldRotation);
-
-            Rigidbody rb = newObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.isKinematic = true;
-            }
-        }   
-    }
-
     private void Change() {
         SceneManager.LoadScene(targetSceneName);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-public class EnterDoors : MonoBehaviour
-{
-    [Header("Inscribed")]
-    public string sceneToLoad;
-    public GameObject popupPanel;
-    public TextMeshProUGUI doorText;
-    public string levelMessage;
-    //Add prefab and drag inspector
-
-    private void Start()
-    {
-        doorText.gameObject.SetActive(false);
-        popupPanel.SetActive(false); // Ensure popupPanel is inactive at start
-    }
-
-    // When Player collides with door
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player")) // If the object that collides is tagged Player
-        {
-            doorText.text = levelMessage; // Set the unique text for the level
-            doorText.gameObject.SetActive(true); // Show the door text
-            popupPanel.SetActive(true); // Show the popup panel
-        }
-    }
-
-    // If player still there and presses E
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            SceneManager.LoadScene(sceneToLoad);
-        }
-    }
-
-    // If player leaves
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            popupPanel.SetActive(false); // Hide the popup panel
-            doorText.gameObject.SetActive(false); // Hide the door text
-        }
-    }
-}
-*/

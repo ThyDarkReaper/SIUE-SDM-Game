@@ -10,7 +10,7 @@ public class NPCinBays : MonoBehaviour
     void Start()
     {
         //Grab the player experience that is locally saved
-        float[] experience = PlayerSaveData.Instance.GetPlayerExperience();
+        float[] experience = null;//PlayerSaveData.Instance.GetPlayerExperience();
 
         if (experience == null)
         {

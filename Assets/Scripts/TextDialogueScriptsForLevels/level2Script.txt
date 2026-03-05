@@ -1,57 +1,84 @@
 Hello, I am Sophia, I am a 26 year old female!
 I get these little bumps on my lip that scabbed over. Please help me out!
-Based on the typical progression of this condition, at which stage would therapy be MOST effective in reducing symptom severity and duration?
+Because ultraviolet exposure only affects the outer epidermal layers of the skin, applying sunscreen to the lips has minimal impact on preventing the recurrence of these lesions.
 1101588
-0Papule stage
-0Vesicle stage
-1Prodromal stage
-0Crusting stage
-Incorrect.
-Incorrect.
-Correct.
-Incorrect.
+0True
+1False
+0-
+0-
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
+Ultraviolet (UV) radiation is a well-established trigger for reactivation of herpes simplex virus (HSV), leading to recrudescent lesions such as recurrent herpes labialis.
+Reducing UV-related tissue damage, including by applying sunscreen to the lips, has been shown to help suppress recurrence of these lesions.
+Therefore, sunscreen use on the lips plays an important preventive role.
 Of the following, which of the following is the MOST appropriate medication for topical application?
 1101588
 1Rx: 10% Docosanol (Abreva) cream; Disp: 2 (two) g tube; Sig: Dab on lesion five times daily during waking hrs for four days beginning when symptoms first occur.
 0Rx: Fluocinonide (Lidex) gel 0.05%; Disp: 30 g tube; Sig: Apply thin film to affected site(s) after each meal and at bedtime. NPO 30 min. after.
 0Rx: Nystatin triamcinolone acetonide ( Mycolog II, Mytrex ) oint; Disp : 15 g tube.;Sig: Apply to affected area after each meal and at bedtime
 0Rx: Tacrolimus 0.1% oint; Disp : 30 g; Sig: Apply thin film to affected site(s) twice daily. NPO 30 min. after
-Correct.
-Incorrect.
-Incorrect.
-Incorrect.
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
-Which of the following statements about docosanol is true?
+The correct answer is 10% docosanol (Abreva) cream because recurrent herpes labialis is best managed with topical antiviral therapy. 
+Docosanol is available as an over-the-counter (OTC) medication for treatment of viral infections.
+When applied frequently at the first prodromal symptoms, docosanol has been shown to reduce viral shedding, pain, and lesion duration.
+The other options are anti-inflammatory or immunomodulatory agents and do not treat active HSV infection, making them inappropriate for this condition. 
+Based on the typical progression of this condition, at which stage would therapy be MOST effective in reducing symptom severity and duration?
 1101588
-0Adrenal suppression is a concern when docosanol is used for greater than 1 week 
-0Docosanol is associated with an increased risk for development of Clostridioides difficile 
-0Docosanol is effective for the treatment of various Candida infections 
-1Docosanol is available over-the-counter (OTC)
-Incorrect.
-Incorrect.
-Incorrect.
-Correct.
+0Papule stage
+0Vesicle stage
+1Prodromal stage
+0Crusting stage
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
 8675309
+The correct answer is the prodromal stage because antiviral therapy is most effective when initiated at the earliest signs of recurrence, such as tingling or burning.
 In this patient, systemic antiviral therapy should be taken continuously to prevent future outbreaks, rather than on an as-needed basis during prodromal symptoms.
+Starting topical or systemic antivirals during the prodrome can abort lesion development or significantly reduce viral shedding, pain, and lesion duration.
 1101588
-0Sometimes True
-1False
 0True
-0Sometimes False
-Incorrect.
-Correct.
-Incorrect.
-Incorrect.
+1False
+0-
+0-
+Actually this is false.
+That's right!
+Well, it couldn't possibly be this one.
+Well, it couldn't possibly be this one.
 8675309
+For most immunocompetent patients with recurrent herpes labialis (RHL), systemic antiviral therapy is used episodically.
+Ideally initiated during the prodromal stage to reduce lesion severity and duration.
+Continuous suppressive therapy is reserved for patients with frequent, severe, or complicated recurrences (e.g., large lesions, erythema multiforme, or post–dental procedure reactivation)
+not as routine management.
 Once the vesicular lesions have started to crust over, the risk of viral transmission is minimal, and the patient can resume activities such as sharing utensils and kissing without concern.
 1101588
-0Sometimes True
-1False
 0True
-0Sometimes False
-Incorrect.
-Correct.
-Incorrect.
-Incorrect.
+1False
+0-
+0-
+This is also false.
+That's right!
+Well, it couldn't possibly be this one.
+Well, it couldn't possibly be this one.
+8675309
+Although infectivity decreases as lesions progress toward healing, HSV transmission can still occur, including during asymptomatic viral shedding.
+Viral shedding may persist before, during, and after visible lesions, meaning patients should avoid close contact activities...
+...(such as kissing or sharing utensils) until lesions have fully resolved to reduce transmission risk.
+I appreciate your help. Do you know what the diagnosis would be for me? What medication would you suggest?
+1101588
+1Absolutely!
+1I pretty sure I know.
+1I'm not quite sure...
+1I have no idea.
+You got this!
+You got this!
+You got this!
+You got this!
 8675309

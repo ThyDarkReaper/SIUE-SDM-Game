@@ -34,8 +34,8 @@ public class ElevatorOpen : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("E key pressed. Loading scene...");
-            //COMMENT THIS OUT BELOW TO USE ELEVATOR SCENE
-            //SceneManager.LoadScene("ElevatorScene");
+
+            SceneManager.LoadScene("ElevatorScene");
         }
     }
 }

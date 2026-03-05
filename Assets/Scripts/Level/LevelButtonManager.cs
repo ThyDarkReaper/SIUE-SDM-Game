@@ -11,6 +11,7 @@ using Unity.VisualScripting;
 
 public class LevelButtonManager : MonoBehaviour
 {
+    public Rotate MedRotator;
     //Used functions from other scripts
     public GlobalVariables GV;
     public chatboxHandler cbh;
@@ -26,6 +27,9 @@ public class LevelButtonManager : MonoBehaviour
     public int attemptsDia = 0;
     public float maxScore = 50f;
 
+    public GameObject MainCamera;
+    public GameObject MedCamera;
+    public GameObject CabinetDoor;
     public GameObject axiumUIPanel;
     public GameObject diagnosisButton;
     public GameObject medicineButton;
@@ -294,6 +298,8 @@ public class LevelButtonManager : MonoBehaviour
         backButtonFromDiaAndMed.SetActive(false);
         diagnosisButton.SetActive(true);
         npcHoverDetector.SetActive(true);
+        MainCamera.SetActive(true);
+        MedCamera.SetActive(false);
         medicineButton.SetActive(HandleMedShown());
 
         //Outputs the final grade screen if both are anwsered correct
@@ -314,12 +320,26 @@ public class LevelButtonManager : MonoBehaviour
 
     //Set other object to inactive while on this UI
     public void OnClickOfMedicine(){
-        diagnosisButton.SetActive(false);
-        medicineButton.SetActive(false);
-        medicineAns.SetActive(true);
-        backButtonFromDiaAndMed.SetActive(true);
-        npcHoverDetector.SetActive(false);
+        StartCoroutine(OnClickOfMedicineRoutine());
     }
+
+    IEnumerator OnClickOfMedicineRoutine()
+{
+    MedRotator.RotateAssignedObject();
+
+    // wait for real time (not affected by timeScale)
+    yield return new WaitForSecondsRealtime(1.5f); // change delay as needed
+
+    diagnosisButton.SetActive(false);
+    medicineButton.SetActive(false);
+    axiumButton.SetActive(false);
+    medicineAns.SetActive(true);
+    MainCamera.SetActive(false);
+    MedCamera.SetActive(true);
+    backButtonFromDiaAndMed.SetActive(true);
+    npcHoverDetector.SetActive(false);
+}
+
 
     //Will display Med if isDiaCorrect meaning the user anwsered the question correctly and now shows medicine
     public bool HandleMedShown(){

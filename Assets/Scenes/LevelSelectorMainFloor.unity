@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45140058, g: 0.500893, b: 0.57231724, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140082, g: 0.5008932, b: 0.5723176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 316676849}
   - component: {fileID: 316676850}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   levelSelector: {fileID: 316676844}
   pickedLevel: {fileID: 0}
   characterForPOS: {fileID: 0}
-  targetSceneName: LevelSelector2ndFloor
+  targetSceneName: ElevatorScene
   FadePrefab: {fileID: 6536150287628382011, guid: 4b6ee565a88ef3c4fb57f5a5c6bfc5ae, type: 3}
 --- !u!1 &365834582
 GameObject:

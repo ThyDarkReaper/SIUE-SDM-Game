@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f654dd35660df4bb0a25e421ea4dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MedRotator: {fileID: 0}
+  MedRotator: {fileID: 656701517}
   GV: {fileID: 1521072175}
   cbh: {fileID: 3631656714722373795}
   TH: {fileID: 0}
@@ -3953,7 +3953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975488315723787498, guid: 4c7abafaaa03d450caa20b267878fb8f, type: 3}
       propertyPath: m_text
-      value: 'Name: Tim
+      value: 'Name: Cody
 
 '
       objectReference: {fileID: 0}

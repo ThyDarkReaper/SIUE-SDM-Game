@@ -6,32 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Login.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/ChangePassword.unity
-    guid: 00f58ac5247c72b4d88a6d6206b77be7
-  - enabled: 1
-    path: Assets/Scenes/AdminLogin.unity
-    guid: c6b55bf7d4a8ea149ad00670b134201d
-  - enabled: 1
-    path: Assets/Scenes/AdminPanel.unity
-    guid: 083f77a7c4bd084478c8470233ccd8e8
-  - enabled: 1
     path: Assets/Scenes/WelcomeScene.unity
     guid: 1d5f8ce2b4bb243ed910a8a0c980fdcf
   - enabled: 1
     path: Assets/Scenes/CharacterCreator.unity
     guid: ecabc94f38522464a8c8884e46f66486
   - enabled: 1
+    path: Assets/Scenes/LevelSelectorMainFloor.unity
+    guid: 54b8651fa4565cc48a5885dcf374b68f
+  - enabled: 1
     path: Assets/Scenes/ElevatorScene.unity
     guid: 9db680c3968a04a75abf592799522d7e
   - enabled: 1
     path: Assets/Scenes/SettingsScene.unity
     guid: 19eaf0b1e31904225b5fa5b43175f3a8
-  - enabled: 1
-    path: Assets/Scenes/LevelSelectorMainFloor.unity
-    guid: 54b8651fa4565cc48a5885dcf374b68f
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: d06ec5dde5af94c4299c792156bce63c

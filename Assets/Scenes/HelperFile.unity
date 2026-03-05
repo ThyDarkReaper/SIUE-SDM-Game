@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f409749b2528834c8893de7039616f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateButton: {fileID: 0}
+  updateButton: {fileID: 1332448490}
   url: http://103-89-14-161.cloud-xip.com
 --- !u!1 &1332448488
 GameObject:
@@ -339,7 +339,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 996172655}
         m_TargetAssemblyTypeName: Importer, Assembly-CSharp
-        m_MethodName: UpdateInfo
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -348,7 +348,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1332448491
 MonoBehaviour:
   m_ObjectHideFlags: 0

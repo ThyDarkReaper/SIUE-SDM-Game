@@ -10,7 +10,7 @@ public class Importer : MonoBehaviour
 {
 
     public Button updateButton; // assign your button prefab in Inspector
-    public string url = "http://103-89-14-161.cloud-xip.com";
+    public string url = "http://103-89-14-161.cloud-xip.com/changePassword.php";
     void Start() {
         //StartCoroutine(GetInfo());
         updateButton.onClick.AddListener(UpdateInfo);
@@ -33,10 +33,11 @@ public class Importer : MonoBehaviour
         }
         else {
             // Show results as text
-            //Debug.Log("being recieved");
-            string path = Path.Combine(Application.persistentDataPath, "overwrite.txt");
+            Debug.Log("starting overwrite");
+            //string path = Path.Combine(Application.persistentDataPath, "overwrite.txt");
+            File.WriteAllText("Assests/Scripts/csv/overwrite.txt", "being recieved");
 
-            File.WriteAllText(path, "being recieved");
+            //File.WriteAllText(path, "being recieved");
  
         }
     }

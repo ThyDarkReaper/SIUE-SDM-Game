@@ -12,7 +12,7 @@ public class GlobalVariables : MonoBehaviour
     //fifth digit = clothesColorID: 0=cyan, 1=black, 2=grey, 3=blue, 4=orange, 5=purple, 6=pink,7=red, 8=white, 9=yellow.
     //sixth digit = labcoat bool: 0=no 1=yes
     //seventh digit = glasses bool: 0=no 1=yes
-    int volume = 5;
+    int volume = 2;
     int characterID = 1110200;
     bool talking = false;
     bool paused = false;

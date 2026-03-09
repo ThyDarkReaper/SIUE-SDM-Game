@@ -28,8 +28,8 @@ public class ReAnimationLoader : MonoBehaviour
             //return;
             id = 1243211;//GV.getCharacterID();
         }
-        else {
-            id = PlayerSaveData.Instance.GetPlayerCustomization();
+        else{
+            id = GV.getCharacterID();
         }
         string ids = "" + id;
         char[] charID = ids.ToCharArray();

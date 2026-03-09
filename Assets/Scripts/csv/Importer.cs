@@ -25,6 +25,7 @@ public class Importer : MonoBehaviour
         Debug.Log("Starting web request...");
 
         UnityWebRequest source = UnityWebRequest.Get(url);
+        source.timeout = 10; // Set a timeout for the request (in seconds)
         yield return source.SendWebRequest();
  
         if (source.result != UnityWebRequest.Result.Success) {
@@ -35,7 +36,7 @@ public class Importer : MonoBehaviour
             // Show results as text
             Debug.Log("starting overwrite");
             //string path = Path.Combine(Application.persistentDataPath, "overwrite.txt");
-            File.WriteAllText("Assests/Scripts/csv/overwrite.txt", "being recieved");
+            File.WriteAllText("Assets/Scripts/csv/overwrite.txt", "being recieved");
 
             //File.WriteAllText(path, "being recieved");
  

@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 using System.IO;
 using TMPro;
 using UnityEngine.UI;
+using System.Text;
  
 
 public class Importer : MonoBehaviour 
@@ -11,6 +12,9 @@ public class Importer : MonoBehaviour
 
     public Button updateButton; // assign your button prefab in Inspector
     public string url = "http://103-89-14-161.cloud-xip.com/changePassword.php";
+
+    public string username = "ymoto";
+    public string password = "yami";
     void Start() {
         //StartCoroutine(GetInfo());
         updateButton.onClick.AddListener(UpdateInfo);
@@ -26,6 +30,11 @@ public class Importer : MonoBehaviour
 
         UnityWebRequest source = UnityWebRequest.Get(url);
         source.timeout = 10; // Set a timeout for the request (in seconds)
+
+        string auth = username + ":" + password;
+        string authBase64 = System.Convert.ToBase64String(Encoding.ASCII.GetBytes(auth));
+        source.SetRequestHeader("Authorization", "Basic " + authBase64); // [web:3][web:16][web:23]
+
         yield return source.SendWebRequest();
  
         if (source.result != UnityWebRequest.Result.Success) {

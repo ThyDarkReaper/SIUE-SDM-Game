@@ -57,7 +57,7 @@ public class Login : MonoBehaviour
         form.AddField("username", username);
         form.AddField("password", password);
 
-        string url = "http://103-89-14-161.cloud-xip.com/login.php";
+        string url = "http://103-89-14-188.cloud-xip.com/login.php";
         Debug.Log("Attempting to connect to: " + url);
         
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))

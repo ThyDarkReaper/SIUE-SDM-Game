@@ -25,31 +25,68 @@ public class Importer : MonoBehaviour
     }
 
      IEnumerator GetInfo() {
+        
+        // Try using string-based POST data instead of WWWForm
+        string postData = $"username={UnityWebRequest.EscapeURL(username)}&newPassword={UnityWebRequest.EscapeURL(password)}";
+        Debug.Log($"POST Data: {postData}");
+        
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        Debug.Log("Starting web request...");
-
-        UnityWebRequest source = UnityWebRequest.Get(url);
-        source.timeout = 10; // Set a timeout for the request (in seconds)
-
-        string auth = username + ":" + password;
-        string authBase64 = System.Convert.ToBase64String(Encoding.ASCII.GetBytes(auth));
-        source.SetRequestHeader("Authorization", "Basic " + authBase64); // [web:3][web:16][web:23]
-
-        yield return source.SendWebRequest();
- 
-        if (source.result != UnityWebRequest.Result.Success) {
-            Debug.Log(source.error);
-            yield break; // Exit the coroutine if there's an error
+        string url = "http://103-89-14-188.cloud-xip.com/changePassword.php";
+        Debug.Log("Attempting to connect to: " + url);
+        
+        UnityWebRequest www = new UnityWebRequest(url, "POST");
+        www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        www.downloadHandler = new DownloadHandlerBuffer();
+        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        www.timeout = 30;
+        yield return www.SendWebRequest();
+        
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            string errorDetails = $"Status Code: {www.responseCode}, Error: {www.error}";
+            if (www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
+            {
+                errorDetails += $", Response: {www.downloadHandler.text}";
+            }
+            Debug.LogError("Network Error: " + errorDetails);
         }
-        else {
-            // Show results as text
-            Debug.Log("starting overwrite");
-            //string path = Path.Combine(Application.persistentDataPath, "overwrite.txt");
-            File.WriteAllText("Assets/Scripts/csv/overwrite.txt", "being recieved");
+        else
+        {
+            string responseText = www.downloadHandler.text;
+            Debug.Log("Server Response: " + responseText);
+            
+            try
+            {
+                // Change password successful
+                if (responseText.Contains("\"success\":true"))
+                {
+                    Debug.Log("Password changed successfully!");
 
-            //File.WriteAllText(path, "being recieved");
- 
+                }
+                // Change password failed
+                else if (responseText.Contains("\"success\":false"))
+                {
+                    // Extract error message from JSON
+                    string errorMessage = "Failed to change password";
+                    int messageStart = responseText.IndexOf("\"message\":\"") + 11;
+                    if (messageStart > 10)
+                    {
+                        int messageEnd = responseText.IndexOf("\"", messageStart);
+                        if (messageEnd > messageStart)
+                        {
+                            errorMessage = responseText.Substring(messageStart, messageEnd - messageStart);
+                        }
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("JSON Parse Error: " + e.Message + " Response: " + responseText);
+            }
         }
+ 
+        
     }
     // IEnumerator GetInfo() {
     //     UnityWebRequest source = UnityWebRequest.Get("http://103-89-14-161.cloud-xip.com");

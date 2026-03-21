@@ -11,7 +11,6 @@ public class Importer : MonoBehaviour
 {
 
     public Button updateButton; // assign your button prefab in Inspector
-    public string url = "http://103-89-14-161.cloud-xip.com/changePassword.php";
 
     public string username = "ymoto";
     public string password = "yami";

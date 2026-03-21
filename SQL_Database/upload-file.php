@@ -45,7 +45,7 @@
             exit;
         }
 
-        $query = "UPDATE questions SET question = ?, answer1 = ?, answer2 = ?, answer3 = ?, answer4 = ?, feedback = ? WHERE questionID = ?";
+        $query = "UPDATE questions SET question = ?, answer1 = ?, answer2 = ?, answer3 = ?, answer4 = ?, explanation = ? WHERE questionID = ?";
 
         $stmt = mysqli_prepare($con, $query);
         if (!$stmt) {
@@ -54,7 +54,7 @@
             exit;
         }
 
-        mysqli_stmt_bind_param($stmt, "sssssss", $question, $answer1, $answer2, $answer3, $answer4, $feedback, $questionID);
+        mysqli_stmt_bind_param($stmt, "sssssss", $question, $answer1, $answer2, $answer3, $answer4, $explanation, $questionID);
 
         $errors = [];
         $rowNum = 1;
@@ -70,7 +70,7 @@
             $answer2    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[2]);
             $answer3    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[3]);
             $answer4    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[4]);
-            $feedback   = iconv('Windows-1252', 'UTF-8//IGNORE', $data[5]);
+            $explanation   = iconv('Windows-1252', 'UTF-8//IGNORE', $data[5]);
             $questionID = strval($data[6]);
 
             if (!mysqli_stmt_execute($stmt)) {

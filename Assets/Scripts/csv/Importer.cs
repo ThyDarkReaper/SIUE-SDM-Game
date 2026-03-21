@@ -29,7 +29,7 @@ public class Importer : MonoBehaviour
         // 🔥 You manually decide BOTH level and file
         StartCoroutine(GetLevelData(levelToLoad, fileNameToWrite));
     }
-
+  
     // =========================
     // MAIN FETCH FUNCTION
     // =========================
@@ -50,6 +50,8 @@ public class Importer : MonoBehaviour
 
         string json = www.downloadHandler.text;
         Debug.Log("Received JSON: " + json);
+
+        Debug.Log("RAW RESPONSE:\n" + json);
 
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 

@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
@@ -7,33 +5,32 @@ using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEditor.Compilation;
 
 public class Importer : MonoBehaviour
 {
-    public Button updateButton;
-
     // Base URL for your level API
-    public string baseUrl = "http://103-89-14-188.cloud-xip.com/getLevel.php?level=";
+    string baseUrl = "http://103-89-14-188.cloud-xip.com/getLevel.php?level=";
 
     // You control BOTH of these in Inspector or code
     public int levelToLoad = 1;
-    public string fileNameToWrite = "overwrite.txt";
+    public TextAsset fileToWrite;
 
     void Start()
     {
-        updateButton.onClick.AddListener(UpdateInfo);
+        UpdateInfo();
     }
 
     public void UpdateInfo()
     {
         // 🔥 You manually decide BOTH level and file
-        StartCoroutine(GetLevelData(levelToLoad, fileNameToWrite));
+        StartCoroutine(GetLevelData(levelToLoad, fileToWrite));
     }
   
     // =========================
     // MAIN FETCH FUNCTION
     // =========================
-    IEnumerator GetLevelData(int level, string fileName)
+    IEnumerator GetLevelData(int level, TextAsset fileName)
     {
         string url = baseUrl + level;
 
@@ -53,14 +50,44 @@ public class Importer : MonoBehaviour
 
         Debug.Log("RAW RESPONSE:\n" + json);
 
-        LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+        APIResponse response = JsonUtility.FromJson<APIResponse>(json);
+
+        if (!response.success)
+        {
+            Debug.LogError("API Error: " + response.message);
+            yield break;
+        }
+        
+        LevelData levelData = new LevelData
+        {
+            level = level,
+            blocks = new List<Block>()
+        };
+
+        foreach (ApiQuestion q in response.questions)
+        {
+            Block block = new Block();
+            block.question = q.question;
+            block.explanation = q.explanation;
+            block.answers = new List<Answer>();
+
+            string[] rawAnswers = { q.answer1, q.answer2, q.answer3, q.answer4 };
+            foreach (string raw in rawAnswers)
+            {
+                if (!string.IsNullOrEmpty(raw))
+                    block.answers.Add(new Answer { correct = raw[0] == '1', text = raw.Substring(1) });
+            }
+
+            levelData.blocks.Add(block);
+        }
 
         string formattedText = FormatLevel(levelData);
+        
+        Debug.Log($"Level: {levelData.level}, Blocks: {levelData.blocks?.Count}");
 
         // 🔥 Dynamic path using YOUR filename
-        string fullPath = Path.Combine(Application.persistentDataPath, fileName);
-
-        WriteToFile(formattedText, fullPath);
+        string fullPath = Path.Combine(Application.dataPath, "Scripts/TextDialogueScriptsForLevels/" + fileName.name + ".txt");
+        WriteToFile(formattedText, fileName);
 
         Debug.Log($"Level {level} written to: {fullPath}");
     }
@@ -74,7 +101,8 @@ public class Importer : MonoBehaviour
 
         foreach (Block block in level.blocks)
         {
-            sb.AppendLine(block.questionText);
+            string questionFormatted = System.Text.RegularExpressions.Regex.Replace(block.question, @"([.!?])\s+", "$1\n");
+            sb.AppendLine(questionFormatted);
 
             sb.AppendLine("1101588");
 
@@ -103,10 +131,23 @@ public class Importer : MonoBehaviour
     // =========================
     // WRITE FILE
     // =========================
-    void WriteToFile(string content, string filePath)
+    void WriteToFile(string content, TextAsset fileName)
+{
+    try
     {
-        File.WriteAllText(filePath, content);
+        File.WriteAllText(Path.Combine(Application.dataPath, "Scripts/TextDialogueScriptsForLevels/" + fileName.name + ".txt"), content);
+        Debug.Log("File successfully written!");
+
+        // THIS GOES RIGHT HERE
+        #if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+        #endif
     }
+    catch (System.Exception e)
+    {
+        Debug.LogError("File Write Error: " + e.Message);
+    }
+}
 }
 
 /////////////////////////////////////////////////////
@@ -124,7 +165,7 @@ public class LevelData
 public class Block
 {
     public string type;
-    public string questionText;
+    public string question;
     public List<Answer> answers;
     public string explanation;
 }
@@ -135,97 +176,21 @@ public class Answer
     public string text;
     public bool correct;
 }
-
-
-/*
-using UnityEngine;
-using System.Collections;
-using UnityEngine.Networking;
-using System.IO;
-using TMPro;
-using UnityEngine.UI;
-using System.Text;
- 
-
-public class Importer : MonoBehaviour 
+[System.Serializable]
+public class ApiQuestion
 {
-
-    public Button updateButton; // assign your button prefab in Inspector
-
-    public string username = "ymoto";
-    public string password = "yami";
-    void Start() {
-        //StartCoroutine(GetInfo());
-        updateButton.onClick.AddListener(UpdateInfo);
-    }
-
-    public void UpdateInfo() {
-        StartCoroutine(GetInfo());
-    }
-
-     IEnumerator GetInfo() {
-        
-        // Try using string-based POST data instead of WWWForm
-        string postData = $"username={UnityWebRequest.EscapeURL(username)}&newPassword={UnityWebRequest.EscapeURL(password)}";
-        Debug.Log($"POST Data: {postData}");
-        
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
-
-        string url = "http://103-89-14-188.cloud-xip.com/changePassword.php";
-        Debug.Log("Attempting to connect to: " + url);
-        
-        UnityWebRequest www = new UnityWebRequest(url, "POST");
-        www.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        www.downloadHandler = new DownloadHandlerBuffer();
-        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        www.timeout = 30;
-        yield return www.SendWebRequest();
-        
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            string errorDetails = $"Status Code: {www.responseCode}, Error: {www.error}";
-            if (www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
-            {
-                errorDetails += $", Response: {www.downloadHandler.text}";
-            }
-            Debug.LogError("Network Error: " + errorDetails);
-        }
-        else
-        {
-            string responseText = www.downloadHandler.text;
-            Debug.Log("Server Response: " + responseText);
-            
-            try
-            {
-                // Change password successful
-                if (responseText.Contains("\"success\":true"))
-                {
-                    Debug.Log("Password changed successfully!");
-
-                }
-                // Change password failed
-                else if (responseText.Contains("\"success\":false"))
-                {
-                    // Extract error message from JSON
-                    string errorMessage = "Failed to change password";
-                    int messageStart = responseText.IndexOf("\"message\":\"") + 11;
-                    if (messageStart > 10)
-                    {
-                        int messageEnd = responseText.IndexOf("\"", messageStart);
-                        if (messageEnd > messageStart)
-                        {
-                            errorMessage = responseText.Substring(messageStart, messageEnd - messageStart);
-                        }
-                    }
-                }
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError("JSON Parse Error: " + e.Message + " Response: " + responseText);
-            }
-        }
- 
-        
-    }
+    public string question;
+    public string answer1;
+    public string answer2;
+    public string answer3;
+    public string answer4;
+    public string explanation;
 }
-*/
+[System.Serializable]
+public class APIResponse
+{    
+    public bool success;
+    public string message;
+    public string questionID;
+    public List<ApiQuestion> questions;
+}

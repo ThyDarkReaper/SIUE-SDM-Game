@@ -27,10 +27,21 @@ if ($stmt) {
     
     if ($result) {
         $received = mysqli_stmt_get_result($stmt);
-        if ($received && $row = mysqli_fetch_assoc($received)) {
-            echo json_encode(['success' => true, 'question' => $row['question'], 'answer1' => $row['answer1'], 'answer2' => $row['answer2'], 'answer3' => $row['answer3'], 'answer4' => $row['answer4'], 'explanation' => $row['explanation']]);
+        $questions = [];
+        while ($received && $row = mysqli_fetch_assoc($received)) {
+            $questions[] = [
+                'question'    => $row['question'],
+                'answer1'     => $row['answer1'],
+                'answer2'     => $row['answer2'],
+                'answer3'     => $row['answer3'],
+                'answer4'     => $row['answer4'],
+                'explanation' => $row['explanation']
+            ];
+        }
+        if (count($questions) > 0) {
+            echo json_encode(['success' => true, 'level' => $level, 'questions' => $questions]);
         } else {
-            echo json_encode(['success' => false, 'message' => 'Question not found']);
+            echo json_encode(['success' => false, 'message' => 'No questions found for this level']);
         }
     } else {
         echo json_encode(['success' => false, 'message' => 'Failed to execute query']);

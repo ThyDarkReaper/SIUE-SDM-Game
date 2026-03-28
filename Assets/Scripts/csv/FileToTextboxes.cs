@@ -17,7 +17,12 @@ public class FileToTextboxes : MonoBehaviour
     void Start()
     {
         // Load lines from file only once
+        #if UNITY_EDITOR
+        string filePath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", UnityEditor.AssetDatabase.GetAssetPath(inputFile)));
+        lines = File.ReadAllText(filePath).Split('\n');
+        #else
         lines = inputFile.text.Split('\n');
+        #endif
         LoadingInformation();
         
         // Add the button click event

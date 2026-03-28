@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using FullSerializer;
 using FullSerializer.Internal.DirectConverters;
 
@@ -74,7 +75,12 @@ public class TalkingHandler : MonoBehaviour
 
     private int CheckIfDialogueFinished()
     {
-        int lineCount = textScript.text.Split('\n').Length;
+        #if UNITY_EDITOR
+        string fullPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", UnityEditor.AssetDatabase.GetAssetPath(textScript)));
+        int lineCount = File.ReadAllText(fullPath).Replace("\r\n", "\n").Replace("\r", "\n").Split('\n').Length;
+        #else
+        int lineCount = textScript.text.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n').Length;
+        #endif
         Debug.Log("Line count: " + lineCount);
         return lineCount;
     }
@@ -96,7 +102,12 @@ public class TalkingHandler : MonoBehaviour
         holdForResponse = false;
         finalResponse = "";
         buttonsEmpty.SetActive(false);
-        lines = textScript.text.Split('\n');
+        #if UNITY_EDITOR
+        string scriptPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", UnityEditor.AssetDatabase.GetAssetPath(textScript)));
+        lines = File.ReadAllText(scriptPath).Replace("\r\n", "\n").Replace("\r", "\n").Split('\n');
+        #else
+        lines = textScript.text.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n');
+        #endif
         startTalking();
     }
     void Update()
@@ -152,8 +163,13 @@ public class TalkingHandler : MonoBehaviour
         }
         else if(!GV.getAlreadyTalkedTo())
         {
-            int result;
-            bool canConvert = Int32.TryParse(lines[lineNumber+1], out result);
+            if (lineNumber >= lines.Length)
+            {
+                done = true;
+                return;
+            }
+            int result = 0;
+            bool canConvert = lineNumber + 1 < lines.Length && Int32.TryParse(lines[lineNumber+1].Trim(), out result);
             if(canConvert)
             {
                 if(result == 1101588)

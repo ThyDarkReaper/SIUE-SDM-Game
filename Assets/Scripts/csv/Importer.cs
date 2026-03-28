@@ -10,7 +10,7 @@ using UnityEditor.Compilation;
 public class Importer : MonoBehaviour
 {
     // Base URL for your level API
-    string baseUrl = "http://103-89-14-188.cloud-xip.com/getLevel.php?level=";
+    string baseUrl = "https://103-89-14-188.cloud-xip.com/getLevel.php?level=";
 
     // You control BOTH of these in Inspector or code
     public int levelToLoad = 1;

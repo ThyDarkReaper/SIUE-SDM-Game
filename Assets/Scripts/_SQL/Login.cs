@@ -133,7 +133,7 @@ public class Login : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", username);
 
-        string url = "http://103-89-14-188.cloud-xip.com/loadCharacterID.php";
+        string url = "https://103-89-14-188.cloud-xip.com/loadCharacterID.php";
         Debug.Log("Attempting to connect to: " + url);
 
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))

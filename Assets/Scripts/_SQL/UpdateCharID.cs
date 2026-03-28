@@ -15,7 +15,7 @@ public class UpdateCharID : MonoBehaviour
         string postData = $"username={UnityWebRequest.EscapeURL(username)}&charID={UnityWebRequest.EscapeURL(charID.ToString())}";
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        string url = "http://103-89-14-188.cloud-xip.com/updateCharacterID.php";
+        string url = "https://103-89-14-188.cloud-xip.com/updateCharacterID.php";
         UnityWebRequest www = new UnityWebRequest(url, "POST");
         www.uploadHandler = new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = new DownloadHandlerBuffer();

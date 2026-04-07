@@ -1,7 +1,7 @@
 Hello, my name is Tim, I am a 48 year old male!
 I have a burning sensation on the inside of my mouth! FIX ME.
 I hope you read my intake form, I hate repeating myself!
-Which of the following best describes the pathogenesis of the condition observed in this patient? 
+Which of the following best describes the pathogenesis of the condition observed in this patient?
 1101588
 0Bacterial toxins induce direct damage to epithelial cells, leading to ulceration and sloughing of the mucosa
 0Viral infection leads to epithelial dysplasia and malignant transformation of mucosal tissues
@@ -12,9 +12,9 @@ Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 This is exactly what I was thinking! Good answer.
 8675309
-This condition is considered a cell-mediated autoimmune disease in which the immune system targets epithelial cells, particularly those in the basal layer. 
+This condition is considered a cell-mediated autoimmune disease in which the immune system targets epithelial cells, particularly those in the basal layer.
 Histopathologically, this process is characterized by a dense, band-like subepithelial infiltrate composed primarily of T lymphocytes and apoptosis of basal cells.
-There is no evidence of antibody-mediated involvement, supporting a T-cell–driven mechanismrather than a humoral one.
+There is no evidence of antibody-mediated involvement, supporting a T-cell–driven mechanismrather than a humoral one
 What is the most appropriate initial management strategy for this patient's condition?
 1101588
 0Rx: Fluocinonide (Lidex ) gel; Disp: 30 g tube Sig: Apply thin film to affected site(s) after each meal and at bedtime. NPO 30 min. after.
@@ -26,7 +26,7 @@ This is exactly what I was thinking! Good answer.
 Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 8675309
-Dexamethasone is a long-acting corticosteroid with anti-inflammatory and immunosuppressive effects. 
+Dexamethasone is a long-acting corticosteroid with anti-inflammatory and immunosuppressive effects.
 Given the generalized bilateral intraoral involvement of the buccal mucosae, labial mucosae, and tongue in this patient...
 ...using an oral solution swished throughout the mouth helps ensure adequate contact with all affected surfaces.
 Which medication is most likely to be a necessary addition to this patient's treatment plan?
@@ -63,10 +63,10 @@ The interlacing, net-like white lines observed in this condition are commonly re
 0False
 0-
 0-
-That's right!
-Actually, this is true.
-Well, it couldn't possibly be this one.
-Well, it couldn't possibly be this one.
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
 Wickham’s striae are a hallmark feature of this condition and present as hyperkeratotic white striations arranged in an interlacing, net-like pattern.
 The net-like appearance reflects the Latin word rete (meaning “net”), which describes the characteristic linear white lines seen clinically.
@@ -76,8 +76,9 @@ I appreciate your help. Do you know what the diagnosis would be for me? What med
 1I pretty sure I know.
 1I'm not quite sure...
 1I have no idea.
-You got this!
-You got this!
-You got this!
-You got this!
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
 8675309
+You got this!

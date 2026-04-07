@@ -101,8 +101,11 @@ public class Importer : MonoBehaviour
 
         foreach (Block block in level.blocks)
         {
-            string questionFormatted = System.Text.RegularExpressions.Regex.Replace(block.question, @"([.!?])\s+", "$1\n");
-            sb.AppendLine(questionFormatted);
+            // Normalize line endings and trim so multi-line questions don't
+            // produce a blank line between the last sentence and 1101588.
+            string q = block.question.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd();
+            sb.Append(q);
+            sb.Append('\n');
 
             sb.AppendLine("1101588");
 
@@ -122,7 +125,9 @@ public class Importer : MonoBehaviour
 
             sb.AppendLine("8675309");
 
-            sb.AppendLine(block.explanation);
+            string exp = block.explanation.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd();
+            sb.Append(exp);
+            sb.Append('\n');
         }
 
         return sb.ToString();

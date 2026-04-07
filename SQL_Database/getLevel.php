@@ -19,7 +19,7 @@ if (empty($level)) {
     exit;
 }
 
-$query = "SELECT question, answer1, answer2, answer3, answer4, explanation FROM questions WHERE questionID = ?";
+$query = "SELECT question, answer1, answer2, answer3, answer4, explanation FROM questions WHERE levelID = ? ORDER BY questionID ASC";
 $stmt = mysqli_prepare($con, $query);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "s", $level);

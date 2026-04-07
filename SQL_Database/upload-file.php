@@ -25,6 +25,17 @@
 
     header('Content-Type: application/json');
 
+    // Split question text into lines at sentence boundaries so authors
+    // don't need to add any markers in the CSV themselves.
+    function formatQuestion(string $text): string {
+        // Strip surrounding literal quote characters added by triple-quote CSV convention
+        $text = trim($text, '"');
+        // Normalize line endings from multi-line CSV cells
+        $text = str_replace("\r\n", "\n", $text);
+        $text = str_replace("\r", "\n", $text);
+        return trim($text);
+    }
+
     $con = mysqli_connect('103.89.14.188', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
     if (!$con) {
         echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
@@ -47,13 +58,13 @@
     if (($handle = fopen($fileTmpPath, 'r')) !== false) {
         // Skip the header row
         $header = fgetcsv($handle);
-        if ($header === false || count($header) < 7) {
-            echo json_encode(['success' => false, 'message' => 'Invalid CSV format: expected 7 columns']);
+        if ($header === false || count($header) < 8) {
+            echo json_encode(['success' => false, 'message' => 'Invalid CSV format: expected 8 columns']);
             fclose($handle);
             exit;
         }
 
-        $query = "UPDATE questions SET question = ?, answer1 = ?, answer2 = ?, answer3 = ?, answer4 = ?, explanation = ? WHERE questionID = ?";
+        $query = "UPDATE questions SET question = ?, answer1 = ?, answer2 = ?, answer3 = ?, answer4 = ?, explanation = ? WHERE levelID = ? AND questionID = ?";
 
         $stmt = mysqli_prepare($con, $query);
         if (!$stmt) {
@@ -62,24 +73,25 @@
             exit;
         }
 
-        mysqli_stmt_bind_param($stmt, "sssssss", $question, $answer1, $answer2, $answer3, $answer4, $explanation, $questionID);
+        mysqli_stmt_bind_param($stmt, "ssssssss", $question, $answer1, $answer2, $answer3, $answer4, $explanation, $levelID, $questionID);
 
         $errors = [];
         $rowNum = 1;
         while (($data = fgetcsv($handle)) !== false) {
-            if (count($data) < 7) {
-                $errors[] = "Row $rowNum: invalid format (expected 7 columns, got " . count($data) . ")";
+            if (count($data) < 8) {
+                $errors[] = "Row $rowNum: invalid format (expected 8 columns, got " . count($data) . ")";
                 $rowNum++;
                 continue;
             }
 
-            $question   = iconv('Windows-1252', 'UTF-8//IGNORE', $data[0]);
+            $question   = formatQuestion(iconv('Windows-1252', 'UTF-8//IGNORE', $data[0]));
             $answer1    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[1]);
             $answer2    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[2]);
             $answer3    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[3]);
             $answer4    = iconv('Windows-1252', 'UTF-8//IGNORE', $data[4]);
             $explanation   = iconv('Windows-1252', 'UTF-8//IGNORE', $data[5]);
-            $questionID = strval($data[6]);
+            $levelID = strval($data[6]);
+            $questionID = strval($data[7]);
 
             if (!mysqli_stmt_execute($stmt)) {
                 $errors[] = "Row $rowNum: " . mysqli_stmt_error($stmt);

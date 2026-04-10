@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WelcomeScene.unity
     guid: 1d5f8ce2b4bb243ed910a8a0c980fdcf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterCreator.unity
     guid: ecabc94f38522464a8c8884e46f66486
   - enabled: 1
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ElevatorScene.unity
     guid: 9db680c3968a04a75abf592799522d7e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SettingsScene.unity
     guid: 19eaf0b1e31904225b5fa5b43175f3a8
   - enabled: 1
@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelector2ndFloor.unity
     guid: b5303d79f8beb9c40859e8bdcd45ce04
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Leaderboard.unity
     guid: 87272560900a9c943bafcbe244328dee
   - enabled: 1

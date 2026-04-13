@@ -90,7 +90,18 @@ public class Login : MonoBehaviour
 
                         KeepPlayerName.Instance.SetCharacterName(username);
                         callLoadCharacterID(username);
-                        SceneManager.LoadScene("WelcomeScene");
+                        if (responseText.Contains("\"type\":\"admin\"")) // Check if user logged in is an admin
+                        {
+                            Debug.Log("Admin user detected.");
+                            SceneManager.LoadScene("AdminPanel");
+                            yield break; // Stop execution here
+                        }
+                        else // Student user logged in
+                        {
+                            Debug.Log("Regular user detected.");
+                            SceneManager.LoadScene("WelcomeScene");
+                            yield break; // Stop execution here
+                        }
                     }
                     // User login failed
                     else if (responseText.Contains("\"success\":false"))

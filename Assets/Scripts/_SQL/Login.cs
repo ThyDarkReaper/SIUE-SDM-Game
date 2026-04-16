@@ -57,7 +57,7 @@ public class Login : MonoBehaviour
         form.AddField("username", username);
         form.AddField("password", password);
 
-        string url = "http://103-89-14-161.cloud-xip.com/login.php";
+        string url = "http://103-89-14-188.cloud-xip.com/login.php";
         Debug.Log("Attempting to connect to: " + url);
         
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))
@@ -90,7 +90,18 @@ public class Login : MonoBehaviour
 
                         KeepPlayerName.Instance.SetCharacterName(username);
                         callLoadCharacterID(username);
-                        SceneManager.LoadScene("WelcomeScene");
+                        if (responseText.Contains("\"type\":\"admin\"")) // Check if user logged in is an admin
+                        {
+                            Debug.Log("Admin user detected.");
+                            SceneManager.LoadScene("AdminPanel");
+                            yield break; // Stop execution here
+                        }
+                        else // Student user logged in
+                        {
+                            Debug.Log("Regular user detected.");
+                            SceneManager.LoadScene("WelcomeScene");
+                            yield break; // Stop execution here
+                        }
                     }
                     // User login failed
                     else if (responseText.Contains("\"success\":false"))
@@ -133,7 +144,7 @@ public class Login : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", username);
 
-        string url = "http://103-89-14-188.cloud-xip.com/loadCharacterID.php";
+        string url = "https://103-89-14-188.cloud-xip.com/loadCharacterID.php";
         Debug.Log("Attempting to connect to: " + url);
 
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))

@@ -23,7 +23,7 @@
     }
 
     $column = $level;
-    $query = "UPDATE users SET $column = ? WHERE username = ?";
+    $query = "UPDATE student SET $column = ? WHERE username = ?";
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "is", $score, $username);
     $result = mysqli_stmt_execute($stmt);

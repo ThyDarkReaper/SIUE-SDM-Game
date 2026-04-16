@@ -37,12 +37,13 @@
             if ($received && $row = mysqli_fetch_assoc($received)) {
                 $storedHash = $row['hash'];
                 $storedSalt = $row['salt'];
+                $storedtype = $row['type'];
                 
                 // Generate hash for the provided password using the stored salt
                 $computedHash = crypt($password, $storedSalt);
                 
                 if ($computedHash === $storedHash) {
-                    echo json_encode(['success' => true, 'message' => 'User authenticated successfully']);
+                    echo json_encode(['success' => true, 'message' => 'User authenticated successfully', 'type' => $storedtype]);
                 } else {
                     echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
                 }

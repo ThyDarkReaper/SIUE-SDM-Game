@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading;
+using System.IO;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 
@@ -77,11 +78,21 @@ public class LevelButtonManager : MonoBehaviour
     void Start(){
         //Load the Diagnosis
         LoadTextFromFile(diaFile, diaButtons);
+        #if UNITY_EDITOR
+        string diaPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", UnityEditor.AssetDatabase.GetAssetPath(diaFile)));
+        string[] diaLines = File.ReadAllText(diaPath).Split('\n');
+        #else
         string[] diaLines = diaFile.text.Split('\n');
+        #endif
         correctDiaAnswerIndex = int.Parse(diaLines[0].Trim());//Find the correct anwser in DIA
         //Load the med file
         LoadTextFromFile(medFile, medButtons);
+        #if UNITY_EDITOR
+        string medPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", UnityEditor.AssetDatabase.GetAssetPath(medFile)));
+        string[] medLines = File.ReadAllText(medPath).Split('\n');
+        #else
         string[] medLines = medFile.text.Split('\n');
+        #endif
         correctMedAnswerIndex = int.Parse(medLines[0].Trim());//Find correct button anwser in MED
         diagnosisButton.SetActive(false);//Diagnosis button false till talk to NPC
 
@@ -146,7 +157,12 @@ public class LevelButtonManager : MonoBehaviour
     //Reads the buttons
     void LoadTextFromFile(TextAsset textFile, Button[] buttons){
         //Go through the textfile that is connected to the diaFile or medFile and pulls the info into the 4 buttons
+        #if UNITY_EDITOR
+        string loadPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", UnityEditor.AssetDatabase.GetAssetPath(textFile)));
+        string[] lines = File.ReadAllText(loadPath).Split('\n');
+        #else
         string[] lines = textFile.text.Split('\n');
+        #endif
 
         for(int i = 0; i < buttons.Length && i < lines.Length; i++){
             TMP_Text buttonText = buttons[i].GetComponentInChildren<TMP_Text>();

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.sov3rain.uni-csv": {
+      "version": "https://github.com/Sov3rain/unity-csv.git?path=/Assets/uni-csv#1.2.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f27ce7edac6f8b21c24ef31ec155605e5a3c53ca"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,

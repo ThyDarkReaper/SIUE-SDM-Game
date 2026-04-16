@@ -37,7 +37,7 @@ class AdminReset : MonoBehaviour
         form.AddField("username", email);
         form.AddField("newPassword", defaultPassword);
         
-        string url = "http://103-89-14-188.cloud-xip.com/changePassword.php";
+        string url = "https://103-89-14-188.cloud-xip.com/changePassword.php";
 
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))
         {

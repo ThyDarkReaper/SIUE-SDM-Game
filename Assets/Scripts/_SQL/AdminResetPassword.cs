@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
 
-class AdminReset : MonoBehaviour
+class AdminResetPassword : MonoBehaviour
 {
     public TMP_InputField emailField;
     public TextMeshProUGUI feedbackText;

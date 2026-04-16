@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -755,10 +755,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1055085908}
-        m_TargetAssemblyTypeName: AdminPanel, Assembly-CSharp
-        m_MethodName: ProcessRemoval
-        m_Mode: 1
+      - m_Target: {fileID: 1055085911}
+        m_TargetAssemblyTypeName: ManagePlayers, Assembly-CSharp
+        m_MethodName: CallDeletePlayer
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1847,6 +1847,8 @@ GameObject:
   - component: {fileID: 1055085909}
   - component: {fileID: 1055085908}
   - component: {fileID: 1055085910}
+  - component: {fileID: 1055085911}
+  - component: {fileID: 1055085912}
   m_Layer: 0
   m_Name: AdminHandler
   m_TagString: Untagged
@@ -1896,6 +1898,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c237e7f51069fb48b8e4be167847fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailField: {fileID: 297944309}
+  feedbackText: {fileID: 1796485893}
+--- !u!114 &1055085911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055085907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db594fe8aaae3f04280e49ae972a3498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInput: {fileID: 630619619}
+--- !u!114 &1055085912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055085907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412518104c2b9704498b6d3876c01514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   emailField: {fileID: 297944309}
@@ -2267,7 +2296,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372775038}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2848,9 +2877,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1055085908}
+      - m_Target: {fileID: 1055085907}
         m_TargetAssemblyTypeName: AdminPanel, Assembly-CSharp
-        m_MethodName: ProcessInput
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

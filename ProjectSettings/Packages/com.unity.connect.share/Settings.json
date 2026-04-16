@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/cmthi/SIUE-SDM-Game/Build;G:/Unity Projects/SIUE-SDM-Game/WebBuild (6000.6.10f1);C:/Users/seand/OneDrive/Documents/Siue-SDM-Game/SIUE-SDM-Game/WebGL Builds;C:/Users/seand/OneDrive/Documents/Siue-SDM-Game/SIUE-SDM-Game/WebGLBuild;;;;;;\"}"
+                "value": "{\"m_Value\":\"G:/Unity Projects/SIUE-SDM-Game/WebBuild (6000.6.10f1);C:/Users/seand/OneDrive/Documents/Siue-SDM-Game/SIUE-SDM-Game/WebGL Builds;C:/Users/seand/OneDrive/Documents/Siue-SDM-Game/SIUE-SDM-Game/WebGLBuild;;;;;;;\"}"
             }
         ]
     }

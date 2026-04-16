@@ -1,0 +1,13 @@
+CREATE TABLE `student` (
+    `id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+    `userID` int NOT NULL,
+    `level1score` float DEFAULT NULL,
+    `level2score` float DEFAULT NULL,
+    `level3score` float DEFAULT NULL,
+    `level4score` float DEFAULT NULL,
+    `level5score` float DEFAULT NULL,
+    `level6score` float DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    KEY `userID` (`userID`),
+    CONSTRAINT `student_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci

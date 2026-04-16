@@ -1,0 +1,12 @@
+CREATE TABLE `questions` (
+    `id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+    `question` varchar(10000) DEFAULT NULL COMMENT 'Question Name',
+    `answer1` varchar(255) DEFAULT NULL,
+    `answer2` varchar(255) DEFAULT NULL,
+    `answer3` varchar(255) DEFAULT NULL,
+    `answer4` varchar(255) DEFAULT NULL,
+    `explanation` varchar(500) DEFAULT NULL,
+    `LevelID` int DEFAULT NULL,
+    `QuestionID` int DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 33 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = 'Questions Table'

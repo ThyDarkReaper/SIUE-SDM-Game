@@ -22,10 +22,25 @@
         exit();
     }
 
-    $column = $level;
-    $query = "UPDATE student SET $column = ? WHERE username = ?";
+    $query = "SELECT id from user where username = ?";
     $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "is", $score, $username);
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    if (mysqli_stmt_num_rows($stmt) == 0) {
+        echo json_encode(value: ['success' => false, 'message' => 'User not found']);
+        mysqli_stmt_close($stmt);
+        mysqli_close($con);
+        exit();
+    }
+    else {
+        $id = mysqli_stmt_get_result($stmt)->fetch_assoc()['id'];
+    }
+    mysqli_stmt_close($stmt);
+
+    $query = "UPDATE user SET $column = ? WHERE id = ?";
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, "ii", $score, $id);
     $result = mysqli_stmt_execute($stmt);
     if ($result) {
         $affectedRows = mysqli_stmt_affected_rows($stmt);

@@ -1,0 +1,5 @@
+CREATE TABLE `levelLock` (
+    `levelID` int NOT NULL,
+    `isLocked` tinyint(1) NOT NULL DEFAULT '1',
+    PRIMARY KEY (`levelID`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb3

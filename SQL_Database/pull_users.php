@@ -2,13 +2,18 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-$con = mysqli_connect('103-89-14-188.cloud-xip.com', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
-if (!$con) {
-    echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
+if (!function_exists('mysqli_connect')) {
+    echo json_encode(['success' => false, 'message' => 'mysqli extension is not enabled on this server']);
     exit;
 }
 
-$query = "SELECT username, level1score, level2score, level3score, level4score, level5score, level6score FROM users ORDER BY username ASC";
+$con = mysqli_connect('103-89-14-188.cloud-xip.com', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
+if (!$con) {
+    echo json_encode(['success' => false, 'message' => 'DB connection failed: ' . mysqli_connect_error()]);
+    exit;
+}
+
+$query = "SELECT u.username, s.level1score, s.level2score, s.level3score, s.level4score, s.level5score, s.level6score FROM users u LEFT JOIN student s ON s.userID = u.id ORDER BY u.username ASC";
 $result = mysqli_query($con, $query);
 
 if (!$result) {

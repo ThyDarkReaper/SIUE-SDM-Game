@@ -57,6 +57,39 @@
             margin-bottom: 20px;
             display: none;
         }
+        .lock-section {
+            margin-top: 40px;
+        }
+        .lock-section h2 {
+            color: #333;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+        .lock-btn {
+            padding: 6px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .lock-btn.locked {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .lock-btn.unlocked {
+            background-color: #27ae60;
+            color: white;
+        }
+        .lock-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .lock-status {
+            font-weight: bold;
+        }
+        .lock-status.locked { color: #e74c3c; }
+        .lock-status.unlocked { color: #27ae60; }
     </style>
 </head>
 <body>
@@ -79,6 +112,22 @@
             <tbody id="scoresBody">
             </tbody>
         </table>
+        <div class="lock-section">
+            <h2>Level Lock Management</h2>
+            <div class="error" id="lockError"></div>
+            <div class="loading" id="lockLoading">Loading lock status...</div>
+            <table id="lockTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="lockBody">
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
@@ -117,6 +166,76 @@
                 err.textContent = 'Failed to load data: ' + error.message;
                 err.style.display = 'block';
             });
+
+        // --- Level Lock Management ---
+        function loadLocks() {
+            fetch('https://103-89-14-188.cloud-xip.com/get_level_locks.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('lockLoading').style.display = 'none';
+
+                    if (!data.success) {
+                        const err = document.getElementById('lockError');
+                        err.textContent = 'Lock Error: ' + data.message;
+                        err.style.display = 'block';
+                        return;
+                    }
+
+                    const tbody = document.getElementById('lockBody');
+                    tbody.innerHTML = '';
+                    data.locks.forEach(lock => {
+                        const row = document.createElement('tr');
+                        const statusClass = lock.isLocked ? 'locked' : 'unlocked';
+                        const statusText  = lock.isLocked ? 'Locked' : 'Unlocked';
+                        const btnClass    = lock.isLocked ? 'locked' : 'unlocked';
+                        const btnText     = lock.isLocked ? 'Unlock' : 'Lock';
+                        row.innerHTML = `
+                            <td>Level ${lock.levelID}</td>
+                            <td><span class="lock-status ${statusClass}">${statusText}</span></td>
+                            <td>
+                                <button class="lock-btn ${btnClass}"
+                                        onclick="toggleLock(${lock.levelID}, ${lock.isLocked}, this)">
+                                    ${btnText}
+                                </button>
+                            </td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+
+                    document.getElementById('lockTable').style.display = 'table';
+                })
+                .catch(error => {
+                    document.getElementById('lockLoading').style.display = 'none';
+                    const err = document.getElementById('lockError');
+                    err.textContent = 'Failed to load lock data: ' + error.message;
+                    err.style.display = 'block';
+                });
+        }
+
+        function toggleLock(levelID, currentlyLocked, btn) {
+            btn.disabled = true;
+            const newLocked = !currentlyLocked;
+            fetch('https://103-89-14-188.cloud-xip.com/set_level_lock.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ levelID: levelID, isLocked: newLocked })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    alert('Failed to update lock: ' + data.message);
+                    btn.disabled = false;
+                    return;
+                }
+                loadLocks();
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+                btn.disabled = false;
+            });
+        }
+
+        loadLocks();
     </script>
 </body>
 </html>

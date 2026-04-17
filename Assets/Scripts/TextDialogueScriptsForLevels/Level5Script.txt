@@ -6,52 +6,57 @@ Given the differential diagnosis of recurrent aphthous stomatitis (RAS), which o
 0Herpetiform RAS
 1Mild RAS
 0-
-Incorrect
-Incorrect
-Correct
-Incorrect
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
 8675309
-What is the most appropriate initial management strategy for this patient's condition? 
+
+What is the most appropriate initial management strategy for this patient's condition?
 1101588
 1OrabaseTM 
 0Valacyclovir (Valtrex) caplets 500 mg
 0Penciclovir (Denavir) cream 1% 
 0Prednisone tablets 10 mg
-Correct
-Incorrect
-Incorrect
-Incorrect
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
-Which of the following tests would be most appropriate to include in your plan? 
+
+Which of the following tests would be most appropriate to include in your plan?
 1101588
 0Patch testing  
 0Smear (fungal) testing 
 0Indirect immunofluorescence  
 1Complete blood count and Vitamin B12 levels
-Incorrect
-Incorrect
-Incorrect
-Correct
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
 8675309
+
 Systemic therapy should be initiated in all cases of recurrent aphthous stomatitis to prevent progression to major aphthae.
 1101588
 0True
 1False
 0-
 0-
-Incorrect
-Correct
-Incorrect
-Incorrect
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
-Recurrent aphthous stomatitis (RAS) is a variant of herpes simplex virus infection and should be explained to patients as a type of oral herpes to help them understand the condition.   
+
+Recurrent aphthous stomatitis (RAS) is a variant of herpes simplex virus infection and should be explained to patients as a type of oral herpes to help them understand the condition.
 1101588
 0True
 1False
 0-
 0-
-Incorrect
-Correct
-Incorrect
-Incorrect
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
+

@@ -4424,7 +4424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToCheck: 6
-  isLocked: 1
+  isLocked: 0
 --- !u!114 &8204698053645177784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4438,7 +4438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToCheck: 5
-  isLocked: 1
+  isLocked: 0
 --- !u!114 &8204698053645177785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4452,7 +4452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToCheck: 4
-  isLocked: 1
+  isLocked: 0
 --- !u!1 &8389959646651115509
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45140082, g: 0.5008932, b: 0.5723176, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140117, g: 0.5008937, b: 0.5723182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4396,6 +4396,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b16f9a1904ecb1040a2b2cf7e9839bd0, type: 3}
+--- !u!1 &8204698053645177780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 375581584581028761, guid: b16f9a1904ecb1040a2b2cf7e9839bd0, type: 3}
+  m_PrefabInstance: {fileID: 8204698053645177779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8204698053645177781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 375581584892308112, guid: b16f9a1904ecb1040a2b2cf7e9839bd0, type: 3}
+  m_PrefabInstance: {fileID: 8204698053645177779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8204698053645177782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 375581585683090407, guid: b16f9a1904ecb1040a2b2cf7e9839bd0, type: 3}
+  m_PrefabInstance: {fileID: 8204698053645177779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8204698053645177783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204698053645177780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185cd3587414ce644b787b06dd3555e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToCheck: 6
+  isLocked: 1
+--- !u!114 &8204698053645177784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204698053645177781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185cd3587414ce644b787b06dd3555e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToCheck: 5
+  isLocked: 1
+--- !u!114 &8204698053645177785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204698053645177782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185cd3587414ce644b787b06dd3555e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToCheck: 4
+  isLocked: 1
 --- !u!1 &8389959646651115509
 GameObject:
   m_ObjectHideFlags: 0

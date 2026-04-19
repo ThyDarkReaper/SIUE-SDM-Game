@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914caa24a9b7ef40b328c41b8977136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GV: {fileID: 1521072175}
+  GV: {fileID: 0}
   song: {fileID: 8300000, guid: f85708d7537702d4cb53d1b1fa6d614b, type: 3}
 --- !u!114 &1412469766 stripped
 MonoBehaviour:
@@ -3016,6 +3016,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1002643708088041491, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1545490843305701965, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3060,9 +3064,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2102325436722815820, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5162255197855238954, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
       propertyPath: m_Name
       value: AxiumComputer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162255197855238954, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612607086462258433, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612607087252654173, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162169751586653680, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9c30b551274b7947bf8d44d132c3069, type: 3}

@@ -127,10 +127,10 @@ public class Importer : MonoBehaviour
 
             string exp = block.explanation.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd();
             sb.Append(exp);
-            sb.Append('\n');
+            sb.Append("\n");
         }
 
-        return sb.ToString();
+        return sb.ToString().TrimEnd('\r', '\n');
     }
 
     // =========================

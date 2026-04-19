@@ -10,7 +10,7 @@
         exit;
     }
 
-    $con = mysqli_connect('103.89.14.188', 'root', 'GoDentalCougars66@!', 'oral_medicine', port: 3306);
+    $con = mysqli_connect('https:/103-89-14-188.cloud-xip.com', 'root', 'GoDentalCougars66@!', 'oral_medicine', 3306);
     if (!$con) {
         echo json_encode(['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
         exit;

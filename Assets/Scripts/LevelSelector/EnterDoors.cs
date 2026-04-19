@@ -1,6 +1,7 @@
 //This script is for entering the BAYS of the clinicals (orginally it was doors of an office changed to bays of a clinic)
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -65,6 +66,20 @@ public class EnterDoors : MonoBehaviour
         }
     }
 
+    public void UpdateDoorLockStatus(int level, bool isLocked)
+    {
+        if (isLocked)
+        {
+            foreach (GameObject cube in indicatorCubes)
+            {
+                if (cube.name.Contains("Level" + level))
+                {
+                    cube.SetActive(false);
+                    Debug.Log("Level " + level + " is locked. Deactivating indicator cube.");
+                }
+            }
+        }
+    }
 
     private void Change() {
         SceneManager.LoadScene(targetSceneName);

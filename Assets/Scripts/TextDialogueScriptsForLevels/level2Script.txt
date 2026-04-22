@@ -25,7 +25,7 @@ Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 8675309
-The correct answer is 10% docosanol (Abreva) cream because recurrent herpes labialis is best managed with topical antiviral therapy. 
+The correct answer is 10% docosanol (Abreva) cream because recurrent herpes labialis is best managed with topical antiviral therapy.
 Docosanol is available as an over-the-counter (OTC) medication for treatment of viral infections.
 When applied frequently at the first prodromal symptoms, docosanol has been shown to reduce viral shedding, pain, and lesion duration.
 The other options are anti-inflammatory or immunomodulatory agents and do not treat active HSV infection, making them inappropriate for this condition. 
@@ -48,10 +48,10 @@ Starting topical or systemic antivirals during the prodrome can abort lesion dev
 1False
 0-
 0-
-Actually this is false.
-That's right!
-Well, it couldn't possibly be this one.
-Well, it couldn't possibly be this one.
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
 For most immunocompetent patients with recurrent herpes labialis (RHL), systemic antiviral therapy is used episodically.
 Ideally initiated during the prodromal stage to reduce lesion severity and duration.
@@ -63,10 +63,10 @@ Once the vesicular lesions have started to crust over, the risk of viral transmi
 1False
 0-
 0-
-This is also false.
-That's right!
-Well, it couldn't possibly be this one.
-Well, it couldn't possibly be this one.
+Hmm, I don't think that is correct...
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
 Although infectivity decreases as lesions progress toward healing, HSV transmission can still occur, including during asymptomatic viral shedding.
 Viral shedding may persist before, during, and after visible lesions, meaning patients should avoid close contact activities...
@@ -74,11 +74,11 @@ Viral shedding may persist before, during, and after visible lesions, meaning pa
 I appreciate your help. Do you know what the diagnosis would be for me? What medication would you suggest?
 1101588
 1Absolutely!
-1I pretty sure I know.
+1I'm pretty sure I know
 1I'm not quite sure...
 1I have no idea.
-You got this!
-You got this!
-You got this!
-You got this!
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
 8675309

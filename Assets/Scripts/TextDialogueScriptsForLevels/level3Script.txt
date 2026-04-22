@@ -31,9 +31,9 @@ Although clotrimazole troches are also an effective topical option, they rely on
 In patients with severe xerostomia, troches may not dissolve effectively, resulting in suboptimal drug delivery and reduced efficacy.
 Therefore, a liquid suspension that can be actively swished to coat the mucosa is preferred in this clinical setting.
 Systemic azoles (e.g., fluconazole) are reserved for refractory or severe cases.
-What is the mechanism of action of nystatin? 
+What is the mechanism of action of nystatin?
 1101588
-0Irreversibly binds to bacterial β-lactamase enzymes 
+0Irreversibly binds to bacterial ?-lactamase enzymes 
 1Binds to ergosterol component of the cell membrane of sensitive fungal cells, altering membrane permeability
 0Inhibits fusion of host cell with the herpes viral envelope, preventing viral replication
 0Prevents generation and conduction of nerve impulses via Na+ channel blockade 
@@ -44,17 +44,18 @@ Hmm, I don't think that is correct...
 8675309
 Nystatin, a polyene antifungal medication, produces its effect by binding to ergosterol component of the cell membrane of sensitive fungal cells...
 ...leading to alteration of fungal cell membrane permeability.
-One notable adverse effect of nystatin is a bitter, foul taste.  
+One notable adverse effect of nystatin is a bitter, foul taste.
 1101588
 1True
 0False
 0-
 0-
-That's right!
-Actually this is true.
-Well, it couldn't possibly be this one.
-Well, it couldn't possibly be this one.
+This is exactly what I was thinking! Good answer.
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
+Hmm, I don't think that is correct...
 8675309
+
 You conduct a smear test on this patient. Which of the following statements is TRUE regarding the use of a cytology test for diagnosing the suspected condition in this patient?
 1101588
 0A smear test involves scraping the lesion, smearing it on a slide, and using a Gram stain to detect bacterial overgrowth.
@@ -71,11 +72,11 @@ It does not require a biopsy, is not limited to non-wipeable lesions, and is not
 I appreciate your help. Do you know what the diagnosis would be for me? What medication would you suggest?
 1101588
 1Absolutely!
-1I pretty sure I know.
+1I'm pretty sure I know
 1I'm not quite sure...
 1I have no idea.
-You got this!
-You got this!
-You got this!
-You got this!
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
+This is exactly what I was thinking! Good answer.
 8675309

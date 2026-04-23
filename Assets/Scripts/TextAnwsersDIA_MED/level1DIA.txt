@@ -1,5 +1,5 @@
-2
-Herpes Labialis
-Candidiasis
-Oral Lichen Planus
-Avada Kedavra
+0
+Oral lichen planus
+Leukoplakia
+Oral candidiasis
+Pemphigus vulgaris

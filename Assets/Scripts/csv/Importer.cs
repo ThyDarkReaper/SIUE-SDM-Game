@@ -4,8 +4,6 @@ using UnityEngine.Networking;
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEditor.Compilation;
 
 public class Importer : MonoBehaviour
 {

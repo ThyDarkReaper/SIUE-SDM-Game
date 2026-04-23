@@ -1,5 +1,5 @@
-1
-Wrong answer
-Right answer
-Wrong answer
-Wrong answer
+3
+Herpes simplex virus (HSV)
+Behcet’s disease
+Oral lichen planus
+Recurrent aphthous stomatitis

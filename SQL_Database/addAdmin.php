@@ -4,21 +4,16 @@
         die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
     }
 
+        // Check if the username is provided in the POST request
     if (isset($_POST['username'])) {
         $username = $_POST['username'];
 
         // Then insert into users
-        $stmt = $mysqli->prepare("INSERT INTO users (username, hash, type) VALUES (?, 'test123', 'student')");
+        $stmt = $mysqli->prepare("INSERT INTO users (username, hash, type) VALUES (?, 'test123', 'admin')");
         $stmt->bind_param('s', $username);
         $stmt->execute();
 
-        // Insert into students (references users.id via userid foreign key)
-        $stmt = $mysqli->prepare("INSERT INTO students (userid) VALUES ((SELECT id FROM users WHERE username = ?))");
-        $stmt->bind_param('s', $username);
-        $stmt->execute();
-        $stmt->close();
-
-        // Check if the player was added successfully
+        // Check if the admin was added successfully
         $stmt = $mysqli->prepare("SELECT id FROM users WHERE username = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
@@ -26,9 +21,9 @@
 
 
         if ($stmt->affected_rows > 0) {
-            echo json_encode(['success' => true, 'message' => 'Player added successfully']);
+            echo json_encode(['success' => true, 'message' => 'Admin added successfully']);
         } else {
-            echo json_encode(['success' => false, 'message' => 'Player not added']);
+            echo json_encode(['success' => false, 'message' => 'Admin not added']);
         }
         $stmt->close();
     } else {

@@ -1,5 +1,5 @@
 1
-Wrong answer
-Right answer
-Wrong answer
-Wrong answer
+Benign keratosis
+Oral squamous cell carcinoma (SCC)
+Traumatic ulcerative granuloma with stromal eosinophilia
+Fibroma

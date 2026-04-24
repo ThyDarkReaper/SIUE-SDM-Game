@@ -1,5 +1,5 @@
-2
-Wrong answer
-Wrong answer
-Right answer
-Wrong answer
+0
+Mucous Membrane Pemphigoid
+Pemphigus vulgaris
+Erosive lichen planus
+Candidiasis

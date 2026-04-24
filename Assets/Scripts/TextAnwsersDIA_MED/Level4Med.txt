@@ -1,5 +1,5 @@
-1
-Wrong answer
-Right answer
-Wrong answer
-Wrong answer
+2
+Nystatin suspension
+Chlorhexidine mouth rinse
+Clobetasol propionate gel (0.05%)
+Acyclovir cream

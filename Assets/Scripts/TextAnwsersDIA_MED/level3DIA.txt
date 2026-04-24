@@ -1,5 +1,5 @@
-1
-Herpes Labialis
-Candidiasis
+3
+Leukoplakia
 Oral Lichen Planus
-Avada Kedavra
+Chemical burn
+Candidiasis

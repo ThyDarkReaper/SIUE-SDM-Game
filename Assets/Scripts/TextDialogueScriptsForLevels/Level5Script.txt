@@ -11,7 +11,7 @@ Hmm, I don't think that is correct...
 This is exactly what I was thinking! Good answer.
 Hmm, I don't think that is correct...
 8675309
-
+Most common type = small, shallow, self-limited ulcers without scarring.
 What is the most appropriate initial management strategy for this patient's condition?
 1101588
 1OrabaseTM 
@@ -23,7 +23,7 @@ Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 8675309
-
+Initial management is topicla protective/anti-inflammatory therapy for symptom relief.
 Which of the following tests would be most appropriate to include in your plan?
 1101588
 0Patch testing  
@@ -35,7 +35,7 @@ Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 This is exactly what I was thinking! Good answer.
 8675309
-
+Hematinic deficiencies can be linked to intraoral ulcerations, so labs help rule out systemic causes.
 Systemic therapy should be initiated in all cases of recurrent aphthous stomatitis to prevent progression to major aphthae.
 1101588
 0True
@@ -47,7 +47,7 @@ This is exactly what I was thinking! Good answer.
 Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 8675309
-
+Most cases are limited and do NOT require systemic therapy
 Recurrent aphthous stomatitis (RAS) is a variant of herpes simplex virus infection and should be explained to patients as a type of oral herpes to help them understand the condition.
 1101588
 0True
@@ -59,4 +59,4 @@ This is exactly what I was thinking! Good answer.
 Hmm, I don't think that is correct...
 Hmm, I don't think that is correct...
 8675309
-
+RAS is NOT caused by HSV; it is a non-infectious inflammatory condition.

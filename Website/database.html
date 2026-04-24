@@ -90,6 +90,22 @@
         }
         .lock-status.locked { color: #e74c3c; }
         .lock-status.unlocked { color: #27ae60; }
+        .form-message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .form-message.success {
+            background-color: #e8f7ee;
+            color: #1e7e34;
+            border: 1px solid #bde5c8;
+        }
+        .form-message.error {
+            background-color: #fee;
+            color: #c33;
+            border: 1px solid #f5b5b5;
+        }
     </style>
 </head>
 <body>
@@ -130,21 +146,23 @@
         </div>
         <div class="adminregister">
                 <h2>Admin Registration</h2>
-                <form id="adminRegisterForm" method="POST" action="103-89-14-188.cloud-xip.com/addAdmin.php">
+                <form id="adminRegisterForm" method="POST" action="https://103-89-14-188.cloud-xip.com/addAdmin.php">
                         <label for="registerAdminUsername">Email:</label>
-                        <input type="email" id="registerAdminUsername" name="AdminUsername" required>
+                            <input type="email" id="username" name="username" required>
                     <button type="submit">Register</button>
                 </form>
+                <div id="adminRegisterMessage" class="form-message"></div>
             </div>
         <div class="adminregister">
             <h2>Change Password</h2>
-            <form id="changePasswordForm" method="POST" action="103-89-14-188.cloud-xip.com/changePassword.php">
+            <form id="changePasswordForm" method="POST" action="https://103-89-14-188.cloud-xip.com/changePassword.php">
                     <label for="changePasswordAdminUsername">Email:</label>
-                    <input type="email" id="changePasswordAdminUsername" name="AdminUsername" required>
-                <label for="NewPassword">New Password:</label>
-                <input type="password" id="NewPassword" name="NewPassword" required>
+                        <input type="email" id="changePasswordAdminUsername" name="username" required>
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
                 <button type="submit">Change Password</button>
             </form>
+            <div id="changePasswordMessage" class="form-message"></div>
         </div>
     </div>
 
@@ -252,7 +270,71 @@
                 btn.disabled = false;
             });
         }
+            function showFormMessage(elementId, message, isSuccess) {
+                const msg = document.getElementById(elementId);
+                msg.textContent = message;
+                msg.className = 'form-message ' + (isSuccess ? 'success' : 'error');
+                msg.style.display = 'block';
+            }
 
+            document.getElementById('adminRegisterForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(async response => {
+                    const text = await response.text();
+                    let data = null;
+                    try {
+                        data = JSON.parse(text);
+                    } catch (parseError) {
+                        if (!response.ok) {
+                            throw new Error('Server error ' + response.status + ': ' + text);
+                        }
+                        throw new Error('Invalid server response');
+                    }
+                    if (!response.ok) {
+                        throw new Error(data.message || ('Server error ' + response.status));
+                    }
+                    return data;
+                })
+                .then(data => {
+                    const ok = !!data.success;
+                    showFormMessage('adminRegisterMessage', data.message || (ok ? 'Admin registered.' : 'Registration failed.'), ok);
+                    if (ok) {
+                        form.reset();
+                    }
+                })
+                .catch(error => {
+                    showFormMessage('adminRegisterMessage', 'Registration request failed: ' + error.message, false);
+                });
+            });
+
+            document.getElementById('changePasswordForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const ok = !!data.success;
+                    showFormMessage('changePasswordMessage', data.message || (ok ? 'Password updated.' : 'Password change failed.'), ok);
+                    if (ok) {
+                        form.reset();
+                    }
+                })
+                .catch(error => {
+                    showFormMessage('changePasswordMessage', 'Password change request failed: ' + error.message, false);
+                });
+            });
         loadLocks();
     </script>
 </body>

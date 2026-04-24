@@ -7,9 +7,12 @@
     if (isset($_POST['username'])) {
         $username = $_POST['username'];
 
+        $salt = "\$5\$rounds=5000\$" . "steamedhams" . $username . "\$";
+        $hash = crypt('test123', $salt);
+
         // Then insert into users
-        $stmt = $mysqli->prepare("INSERT INTO users (username, hash, type) VALUES (?, 'test123', 'student')");
-        $stmt->bind_param('s', $username);
+        $stmt = $mysqli->prepare("INSERT INTO users (username, hash, salt, type) VALUES (?, ?, ?, 'student')");
+        $stmt->bind_param('sss', $username, $hash, $salt);
         $stmt->execute();
 
         // Insert into students (references users.id via userid foreign key)

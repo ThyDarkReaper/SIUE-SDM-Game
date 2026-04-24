@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GV: {fileID: 582504655}
-  song: {fileID: 0}
+  song: {fileID: 8300000, guid: dafa1c65bc2e854458f810bcc3a91e05, type: 3}
 --- !u!1001 &630854057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2446,6 +2446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageToHide: {fileID: 1807989915}
+  hideButton: {fileID: 758049531}
 --- !u!1 &787185952
 GameObject:
   m_ObjectHideFlags: 0

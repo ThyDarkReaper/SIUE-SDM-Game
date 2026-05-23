@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class ManagePlayers : MonoBehaviour
 {
     public TMP_InputField usernameInput;
+    public TMPro.TextMeshProUGUI feedbackText;
 
 
     public void CallDeletePlayer(TMP_InputField usernameInput)
@@ -29,10 +30,14 @@ public class ManagePlayers : MonoBehaviour
         if (www.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error deleting player: " + www.error);
+            feedbackText.text = "Error deleting player: " + www.error;
+            yield break;
         }
         else
         {
             Debug.Log("Player deleted successfully: " + www.downloadHandler.text);
+            feedbackText.text = "Player deleted successfully: " + www.downloadHandler.text;
+            yield break;
         }
     }
 
@@ -57,10 +62,14 @@ public class ManagePlayers : MonoBehaviour
         if (www.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error adding player: " + www.error);
+            feedbackText.text = "Error adding player: " + www.error;
+            yield break;
         }
         else
         {
             Debug.Log("Player added successfully: " + www.downloadHandler.text);
+            feedbackText.text = "Player added successfully: " + www.downloadHandler.text;
+            yield break;
         }
     }
 }

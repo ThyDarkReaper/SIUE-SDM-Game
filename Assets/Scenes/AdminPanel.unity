@@ -393,11 +393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931a604d89d69d84da761e035137c78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 0}
-  removeField: {fileID: 0}
-  outputText: {fileID: 0}
-  fireBase: {fileID: 0}
-  SubmittButtonNew: {fileID: 0}
 --- !u!114 &281631946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,10 +753,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1055085911}
         m_TargetAssemblyTypeName: ManagePlayers, Assembly-CSharp
         m_MethodName: CallDeletePlayer
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 630619619}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1567,7 +1562,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1055085908}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AdminPanel, Assembly-CSharp
         m_MethodName: Return
         m_Mode: 1
@@ -1845,8 +1840,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055085909}
-  - component: {fileID: 1055085908}
-  - component: {fileID: 1055085910}
   - component: {fileID: 1055085911}
   - component: {fileID: 1055085912}
   m_Layer: 0
@@ -1856,23 +1849,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1055085908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055085907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931a604d89d69d84da761e035137c78b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputField: {fileID: 630619619}
-  removeField: {fileID: 0}
-  outputText: {fileID: 0}
-  fireBase: {fileID: 0}
-  SubmittButtonNew: {fileID: 1622168534}
 --- !u!4 &1055085909
 Transform:
   m_ObjectHideFlags: 0
@@ -1888,20 +1864,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1055085910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055085907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c237e7f51069fb48b8e4be167847fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emailField: {fileID: 297944309}
-  feedbackText: {fileID: 1796485893}
 --- !u!114 &1055085911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +1877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usernameInput: {fileID: 630619619}
+  feedbackText: {fileID: 1796485893}
 --- !u!114 &1055085912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,11 +2040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931a604d89d69d84da761e035137c78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 0}
-  removeField: {fileID: 0}
-  outputText: {fileID: 0}
-  fireBase: {fileID: 0}
-  SubmittButtonNew: {fileID: 0}
 --- !u!1 &1239544429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,9 +2312,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1055085910}
+      - m_Target: {fileID: 1055085912}
         m_TargetAssemblyTypeName: AdminResetPassword, Assembly-CSharp
-        m_MethodName: ResetUserPassword
+        m_MethodName: CallResetPassword
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2621,7 +2579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53316204231074647bf11bd8159bb3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 630619619}
 --- !u!4 &1550698309
 Transform:
   m_ObjectHideFlags: 0
@@ -2877,13 +2834,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1055085907}
-        m_TargetAssemblyTypeName: AdminPanel, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1055085911}
+        m_TargetAssemblyTypeName: ManagePlayers, Assembly-CSharp
+        m_MethodName: CallAddPlayer
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 630619619}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

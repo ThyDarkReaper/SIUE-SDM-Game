@@ -16,6 +16,7 @@ public class EnterDoors : MonoBehaviour
     public string targetSceneName; //Added this here to store a string of the level selected scene!
 
     public GameObject FadePrefab;
+    private bool isDoorLocked;
 
     private void Start()
     {
@@ -33,6 +34,13 @@ public class EnterDoors : MonoBehaviour
         if (other.CompareTag("Player"))
         {   
             Debug.Log("Player entered the trigger.");
+
+            if (isDoorLocked)
+            {
+                Debug.Log("This level is currently locked.");
+                return;
+            }
+
             //Activate all indicator cubes the player is in when the player enters
             foreach (GameObject cube in indicatorCubes)
             {
@@ -46,6 +54,11 @@ public class EnterDoors : MonoBehaviour
     {
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
+            if (isDoorLocked)
+            {
+                return;
+            }
+
             KeepPlayerPOS.Instance.SetPlayerPosition(characterForPOS);//Added to grab the users POS before entering scene
             Instantiate(FadePrefab); //instatiates an object that fades the screen to black
             Invoke("Change", 0.2f);//Change scene after the fade
@@ -68,16 +81,16 @@ public class EnterDoors : MonoBehaviour
 
     public void UpdateDoorLockStatus(int level, bool isLocked)
     {
+        isDoorLocked = isLocked;
+
         if (isLocked)
         {
             foreach (GameObject cube in indicatorCubes)
             {
-                if (cube.name.Contains("Level" + level))
-                {
-                    cube.SetActive(false);
-                    Debug.Log("Level " + level + " is locked. Deactivating indicator cube.");
-                }
+                cube.SetActive(false);
             }
+
+            Debug.Log("Level " + level + " is locked.");
         }
     }
 

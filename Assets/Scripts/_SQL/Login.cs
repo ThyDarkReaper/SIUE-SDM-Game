@@ -8,6 +8,14 @@ using UnityEngine.Networking;
 
 public class Login : MonoBehaviour
 {
+    [System.Serializable]
+    private class CharacterIdResponse
+    {
+        public bool success;
+        public int charID;
+        public string message;
+    }
+
     public GlobalVariables GV;
     public TMP_InputField usernameInput;
     public TMP_InputField passwordInput;
@@ -52,16 +60,18 @@ public class Login : MonoBehaviour
             yield break; // Stop execution here
         }
         
-        // Only proceed with web request if not a special case
-        WWWForm form = new WWWForm();
-        form.AddField("username", username);
-        form.AddField("password", password);
+        // Use raw URL-encoded POST data so the request format matches the other working backend calls.
+        string postData = $"username={UnityWebRequest.EscapeURL(username)}&password={UnityWebRequest.EscapeURL(password)}";
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
-        string url = "http://103-89-14-188.cloud-xip.com/login.php";
+        string url = "https://103-89-14-188.cloud-xip.com/login.php";
         Debug.Log("Attempting to connect to: " + url);
         
-        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
         {
+            www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = new DownloadHandlerBuffer();
+            www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             www.timeout = 30;
             yield return www.SendWebRequest();
             
@@ -79,6 +89,9 @@ public class Login : MonoBehaviour
             {
                 string responseText = www.downloadHandler.text;
                 Debug.Log("Server Response: " + responseText);
+
+                bool loadStudentCharacter = false;
+                bool goToAdminPanel = false;
                 
                 try
                 {
@@ -89,18 +102,15 @@ public class Login : MonoBehaviour
                         PlayerPrefs.SetString("username", username);
 
                         KeepPlayerName.Instance.SetCharacterName(username);
-                        callLoadCharacterID(username);
-                        if (responseText.Contains("\"type\":\"admin\"")) // Check if user logged in is an admin
+                        if (responseText.Contains("\"type\":\"admin\"")) // Check if user logged in as an admin
                         {
                             Debug.Log("Admin user detected.");
-                            SceneManager.LoadScene("AdminPanel");
-                            yield break; // Stop execution here
+                            goToAdminPanel = true;
                         }
                         else // Student user logged in
                         {
                             Debug.Log("Regular user detected.");
-                            SceneManager.LoadScene("WelcomeScene");
-                            yield break; // Stop execution here
+                            loadStudentCharacter = true;
                         }
                     }
                     // User login failed
@@ -130,25 +140,36 @@ public class Login : MonoBehaviour
                     DisplayError("Error parsing response: " + e.Message);
                     Debug.LogError("JSON Parse Error: " + e.Message + " Response: " + responseText);
                 }
+
+                if (goToAdminPanel)
+                {
+                    SceneManager.LoadScene("AdminPanel");
+                    yield break;
+                }
+
+                if (loadStudentCharacter)
+                {
+                    yield return loadCharacterID(username);
+                    SceneManager.LoadScene("WelcomeScene");
+                    yield break;
+                }
             }
         }
     }
 
-    private void callLoadCharacterID(string username)
-    {
-        StartCoroutine(loadCharacterID(username));
-    }
-
     IEnumerator loadCharacterID(string username)
     {
-        WWWForm form = new WWWForm();
-        form.AddField("username", username);
+        string postData = $"username={UnityWebRequest.EscapeURL(username)}";
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(postData);
 
         string url = "https://103-89-14-188.cloud-xip.com/loadCharacterID.php";
         Debug.Log("Attempting to connect to: " + url);
 
-        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
         {
+            www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = new DownloadHandlerBuffer();
+            www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             www.timeout = 30;
             yield return www.SendWebRequest();
 
@@ -169,35 +190,19 @@ public class Login : MonoBehaviour
 
                 try
                 {
-                    // Extract character ID from JSON response
-                    int charIDStart = responseText.IndexOf("\"charID\":") + 9;
-                    if (charIDStart > 8)
+                    CharacterIdResponse response = JsonUtility.FromJson<CharacterIdResponse>(responseText);
+                    if (response != null && response.success)
                     {
-                        int charIDEnd = responseText.IndexOf(",", charIDStart);
-                        if (charIDEnd > charIDStart)
-                        {
-                            string charIDString = responseText.Substring(charIDStart, charIDEnd - charIDStart).Trim();
-                            if (int.TryParse(charIDString, out int charID))
-                            {
-                                GV.setCharacterID(charID);
-                                Debug.Log("Character ID loaded successfully: " + charID);
-                            }
-                            else
-                            {
-                                DisplayError("Failed to parse character ID.");
-                                Debug.LogError("Parse Error: Unable to convert '" + charIDString + "' to an integer.");
-                            }
-                        }
-                        else
-                        {
-                            DisplayError("Character ID not found in response.");
-                            Debug.LogError("Parse Error: Character ID end delimiter not found.");
-                        }
+                        GV.setCharacterID(response.charID);
+                        Debug.Log("Character ID loaded successfully: " + response.charID);
                     }
                     else
                     {
-                        DisplayError("Character ID not found in response.");
-                        Debug.LogError("Parse Error: Character ID start delimiter not found.");
+                        string message = response != null && !string.IsNullOrEmpty(response.message)
+                            ? response.message
+                            : "Character ID not found in response.";
+                        DisplayError(message);
+                        Debug.LogError("Character ID load failed. Response: " + responseText);
                     }
                 }
                 catch (System.Exception e)

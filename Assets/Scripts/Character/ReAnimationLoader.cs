@@ -20,17 +20,9 @@ public class ReAnimationLoader : MonoBehaviour
     public void StartLoading()
     {
         int id;
-        //ADD HERE WHATEVER YOU NEED TO GRAB CHARACTER ID
-         if (Application.platform != RuntimePlatform.WebGLPlayer){
-            Debug.Log("The code is not running on a WebGL build; as such, the Javascript functions will not be recognized.");
-            //FireBase tmp = GetComponent<FireBase>();
-            //tmp.enabled = false;
-            //return;
-            id = 1243211;//GV.getCharacterID();
-        }
-        else{
-            id = GV.getCharacterID();
-        }
+        
+        id = GV.getCharacterID();
+        
         string ids = "" + id;
         char[] charID = ids.ToCharArray();
         string converter = charID[0] + "";

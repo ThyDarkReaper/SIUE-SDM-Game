@@ -1,5 +1,5 @@
 Question,Answer1,Answer2,Answer3,Answer4,Feedback,LevelID,questionID
-"""Hello, my name is Tim, I am a 48 year old male!
+"Hello, my name is Tim, I am a 48 year old male!
 I have a burning sensation on the inside of my mouth! FIX ME.
 I hope you read my intake form, I hate repeating myself!
 You suspect mucous membrane pemphigoid. Based on the pathogenesis of this condition, which of the following statements is TRUE?","0This condition is primarily due to autoantibodies targeting desmosomal proteins, leading to intraepithelial acantholysis.","1The disease process affects mucosal surfaces such as the mouth, eyes, and anogenital region.","0Because this condition does not typically involve the skin, it is classified as a localized, self-limiting disorder that does not require systemic therapy.","0This condition is best managed conservatively with topical steroids, as systemic therapy is rarely needed due to its self-limiting nature.","Feedback: MMP is a subepithelial autoimmune disease that commonly involves oral, ocular, and other mucosa, not just the mouth.",1,1

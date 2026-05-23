@@ -1,8 +1,25 @@
 <?php
 
     header(header: 'Content-Type: application/json');
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: Content-Type');
 
-    if(!isset($_POST['username']) || !isset($_POST['charID'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit;
+    }
+
+    $rawInput = file_get_contents('php://input');
+    $username = $_POST['username'] ?? null;
+    $charID = $_POST['charID'] ?? null;
+
+    if (($username === null || $charID === null) && !empty($rawInput)) {
+        parse_str($rawInput, $parsedInput);
+        $username = $username ?? ($parsedInput['username'] ?? null);
+        $charID = $charID ?? ($parsedInput['charID'] ?? null);
+    }
+
+    if($username === null || $charID === null) {
         echo json_encode(value: ['success' => false, 'message' => 'Missing required fields']);
         exit();
     }
@@ -12,9 +29,6 @@
         echo json_encode(value: ['success' => false, 'message' => 'Database connection failed: ' . mysqli_connect_error()]);
         exit();
     }
-
-    $username = $_POST['username'];
-    $charID = $_POST['charID'];
 
     if (empty($username) || !is_numeric($charID)) {
         echo json_encode(value: ['success' => false, 'message' => 'Invalid input data']);

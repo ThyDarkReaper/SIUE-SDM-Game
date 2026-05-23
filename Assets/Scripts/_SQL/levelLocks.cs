@@ -12,13 +12,18 @@ public class levelLocks : MonoBehaviour
 
     void Start()
     {
-        enterDoors = FindObjectOfType<EnterDoors>();
+        enterDoors = GetComponent<EnterDoors>();
+        if (enterDoors == null)
+        {
+            enterDoors = FindObjectOfType<EnterDoors>();
+            Debug.LogWarning("levelLocks is not on the same object as EnterDoors. Falling back to first EnterDoors instance in scene.");
+        }
         StartCoroutine(CheckLevelLock());
     }
 
     IEnumerator CheckLevelLock()
     {
-        string url = "https://103-89-14-188.cloud-xip.com/checkLevelLock.php?level=" + levelToCheck;
+        string url = "https://103-89-14-188.cloud-xip.com/checkLevelLock.php?levelID=" + levelToCheck;
 
         UnityWebRequest www = UnityWebRequest.Get(url);
         yield return www.SendWebRequest();

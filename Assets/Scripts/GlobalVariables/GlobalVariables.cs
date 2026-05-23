@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
 {
+    private const string CharacterIdPrefsKey = "character_id";
+
     //Character ID: 
     //first digit = sexID: 1=male 2=female
     //second digit = hairID: 0=none, 1=short, 2=ponytail
@@ -31,6 +33,10 @@ public class GlobalVariables : MonoBehaviour
     }
     void Awake()
     {
+        if (PlayerPrefs.HasKey(CharacterIdPrefsKey))
+        {
+            characterID = PlayerPrefs.GetInt(CharacterIdPrefsKey);
+        }
         //KeepPlayerName kpn = GetComponent<KeepPlayerName>();
         //volume = KeepPlayerName.Instance.GetVolume();
     }
@@ -112,6 +118,8 @@ public class GlobalVariables : MonoBehaviour
     public void setCharacterID(int newID)
     {
         characterID = newID;
+        PlayerPrefs.SetInt(CharacterIdPrefsKey, characterID);
+        PlayerPrefs.Save();
     }
     public bool isTalking()
     {

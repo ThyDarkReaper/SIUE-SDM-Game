@@ -57,3 +57,4 @@ if ($affected === 0) {
 }
 
 echo json_encode(['success' => true, 'levelID' => $levelID, 'isLocked' => (bool) $isLocked]);
+?>

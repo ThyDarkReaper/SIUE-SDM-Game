@@ -1,5 +1,12 @@
 <?php
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type');
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
 if (!isset($_GET['level'])) {
     echo json_encode(['success' => false, 'message' => 'Missing required fields']);
@@ -51,3 +58,5 @@ if ($stmt) {
 } else {
     echo json_encode(['success' => false, 'message' => 'Failed to prepare statement']);
 }
+
+mysqli_close($con);

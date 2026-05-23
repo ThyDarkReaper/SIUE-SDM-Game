@@ -6,17 +6,34 @@
 // The script connects to the MYSQL database, validates the input, hashes the new password with a salt, and updates the user's password in the database.
 
     header('Content-Type: application/json');
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: Content-Type');
+
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit;
+    }
     
     try {
+        $rawInput = file_get_contents('php://input');
+        $username = $_POST['username'] ?? null;
+        $newPassword = $_POST['newPassword'] ?? null;
+
+        if (($username === null || $newPassword === null) && !empty($rawInput)) {
+            parse_str($rawInput, $parsedInput);
+            $username = $username ?? ($parsedInput['username'] ?? null);
+            $newPassword = $newPassword ?? ($parsedInput['newPassword'] ?? null);
+        }
+
         // Check if required POST data exists
-        if (!isset($_POST['username']) || !isset($_POST['newPassword'])) {
+        if ($username === null || $newPassword === null) {
             echo json_encode(['success' => false, 'message' => 'Missing required fields']);
             exit;
         }
 
         // Validate input first
-        $username = trim($_POST['username']);
-        $newPassword = trim($_POST['newPassword']);
+        $username = trim($username);
+        $newPassword = trim($newPassword);
 
         if (empty($username) || empty($newPassword)) {
             echo json_encode(['success' => false, 'message' => 'Username and password cannot be empty']);

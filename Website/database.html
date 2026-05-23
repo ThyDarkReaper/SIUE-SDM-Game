@@ -106,6 +106,20 @@
             color: #c33;
             border: 1px solid #f5b5b5;
         }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .result.success {
+            background-color: #eaffea;
+            color: #27ae60;
+        }
+        .result.error {
+            background-color: #fee;
+            color: #c33;
+        }
     </style>
 </head>
 <body>
@@ -164,7 +178,63 @@
             </form>
             <div id="changePasswordMessage" class="form-message"></div>
         </div>
+        <div class="adminregister">
+            <h2>CSV File Upload</h2>
+            <div class="upload-section">
+                <form id="uploadForm">
+                    <label for="file">Choose a CSV file to upload:</label>
+                    <input type="file" name="file" id="file" accept=".csv">
+                    <button type="submit" id="uploadBtn">Upload</button>
+                </form>
+                <p id="result" class="result"></p>
+            </div>
+        </div>
     </div>
+
+    <script class="upload_csv">
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadInput = document.getElementById('file');
+        const uploadButton = document.getElementById('uploadBtn');
+        const uploadResult = document.getElementById('result');
+
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const selectedFile = uploadInput.files[0];
+            if (!selectedFile) {
+                uploadResult.textContent = 'Please choose a CSV file first.';
+                uploadResult.className = 'result error';
+                uploadResult.style.display = 'block';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            uploadButton.disabled = true;
+            uploadButton.textContent = 'Uploading...';
+
+            fetch('https://103-89-14-188.cloud-xip.com/upload-file.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                uploadResult.textContent = result.message;
+                uploadResult.className = 'result ' + (result.success ? 'success' : 'error');
+                uploadResult.style.display = 'block';
+            })
+            .catch(error => {
+                uploadResult.textContent = 'Error: ' + error.message;
+                uploadResult.className = 'result error';
+                uploadResult.style.display = 'block';
+            })
+            .finally(() => {
+                uploadButton.disabled = false;
+                uploadButton.textContent = 'Upload';
+            });
+        });
+    </script>
 
     <script>
         fetch('https://103-89-14-188.cloud-xip.com/pull_users.php')

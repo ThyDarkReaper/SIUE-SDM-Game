@@ -13,7 +13,7 @@ if (!$con) {
     exit;
 }
 
-$query = "SELECT u.username, s.level1score, s.level2score, s.level3score, s.level4score, s.level5score, s.level6score FROM users u LEFT JOIN student s ON s.userID = u.id ORDER BY u.username ASC";
+$query = "SELECT u.username, s.level1score, s.level2score, s.level3score, s.level4score, s.level5score, s.level6score FROM users u INNER JOIN student s ON s.userID = u.id ORDER BY u.username ASC";
 $result = mysqli_query($con, $query);
 
 if (!$result) {
